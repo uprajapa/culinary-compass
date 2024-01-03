@@ -8,7 +8,7 @@ CREATE TABLE recipes (
   cook_time INTEGER,
   servings INTEGER,
   description VARCHAR (255),
-  ingredients VARCHAR(255),
-  cooking_instructions VARCHAR(255),
+  ingredients VARCHAR,
+  cooking_instructions VARCHAR,
   video_link VARCHAR(255)
 );
