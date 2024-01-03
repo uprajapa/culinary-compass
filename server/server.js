@@ -16,7 +16,7 @@ const indexApiRoutes = require("./src/routes/index");
 const usersApiRoutes = require("./src/routes/users");
 app.use("/api/users", usersApiRoutes);
 
-app.use("/api/", verifyToken, indexApiRoutes);
+app.use("/api/", indexApiRoutes);
 
 app.listen(PORT, HOST, () => {
   console.log(`Example app listening on port ${PORT}`);
