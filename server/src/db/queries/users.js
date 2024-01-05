@@ -6,6 +6,7 @@ const auth = async (email, password) => {
   try {
     const query = "SELECT * FROM users WHERE email = $1";
     const result = await db.query(query, [email]);
+    console.log(result);
     if (result.rowCount === 1) {
       const isPasswordValid = await bcrypt.compare(
         password,
