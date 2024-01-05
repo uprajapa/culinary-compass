@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Home.css"
 function Home({ users, message }) {
   return (
-    <div>
+    <div className="Home">
       <div className="Carousel">
         <Carousel>
         <Carousel.Item controls={true}>
@@ -35,7 +35,7 @@ function Home({ users, message }) {
         <div className="ProfilePic">
           <img src="https://www.budgetbytes.com/wp-content/uploads/2012/02/Hearty-Black-Bean-Quesadillas-V3.jpg"/>
         </div>
-        <div ClassName="ProfileInfo">
+        <div className="ProfileInfo">
           <h1>Recipe Name:</h1>
           <h3>Chef Name:</h3>
           <p>Time:</p>
