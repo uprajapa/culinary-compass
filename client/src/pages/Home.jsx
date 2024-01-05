@@ -1,5 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
-
+import "./Home.css"
 function Home({ users, message }) {
   return (
     <div >
