@@ -1,4 +1,30 @@
-.carousel {
-  width: 600px;
-  height: 300px;
+.Home {
+  display: flex;
+  flex-direction: column;
+  
+}
+.Carousel {
+
+  width: 90%;
+  object-fit: fill;
+  margin-bottom: 10px;
+  align-self: center;
+}
+
+img {
+  
+  text-align: center;
+  width: 300px;
+}
+
+.RecipeListItem {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  align-self: center;
+  border: 3px;
+  border-color:blue;
+  border-style: solid;
+  padding: 5px;
+  
 }
