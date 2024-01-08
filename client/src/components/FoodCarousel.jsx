@@ -31,3 +31,5 @@ const FoodCarousel = () => {
     </div>
   );
 };
+
+export default FoodCarousel;
