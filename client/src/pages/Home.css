@@ -1,6 +1,7 @@
 .Home {
   display: flex;
   flex-direction: column;
+  background-color: #f4f1ec;
   
 }
 .Carousel {
@@ -9,6 +10,7 @@
   object-fit: fill;
   margin-bottom: 10px;
   align-self: center;
+  background-color: white;
 }
 
 img {
@@ -23,8 +25,9 @@ img {
   width: 70%;
   align-self: center;
   border: 3px;
-  border-color:blue;
+  border-color: brown;
   border-style: solid;
   padding: 5px;
+  background-color: blanchedalmond  ;
   
 }
