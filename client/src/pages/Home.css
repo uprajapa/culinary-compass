@@ -1,10 +1,10 @@
-.Home {
+.home {
   display: flex;
   flex-direction: column;
   background-color: #f4f1ec;
   
 }
-.Carousel {
+.carousel {
 
   width: 90%;
   object-fit: fill;
@@ -19,7 +19,7 @@ img {
   width: 300px;
 }
 
-.RecipeListItem {
+.recipe-list-item {
   display: flex;
   justify-content: space-between;
   width: 70%;
@@ -28,6 +28,12 @@ img {
   border-color: brown;
   border-style: solid;
   padding: 5px;
-  background-color: blanchedalmond  ;
+  background-color: blanchedalmond;
   
+}
+
+.recipe-title {
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 55px;
 }
