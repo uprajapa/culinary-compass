@@ -1,0 +1,19 @@
+.recipe-list-item {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  align-self: center;
+  border: 3px;
+  border-color: brown;
+  border-style: solid;
+  padding: 5px;
+  margin: 10px;
+  background-color: blanchedalmond;
+  
+}
+
+.recipe-title {
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 55px;
+}
