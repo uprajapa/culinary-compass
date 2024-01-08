@@ -11,11 +11,15 @@ const app = express();
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
+
 const verifyToken = require("./src/middleware/authMiddleware");
+
 const indexApiRoutes = require("./src/routes/index");
 const usersApiRoutes = require("./src/routes/users");
-app.use("/api/users", usersApiRoutes);
+const recipesApiRoutes = require("./src/routes/recipes");
 
+app.use("/api/users", usersApiRoutes);
+app.use("/api/recipes", recipesApiRoutes);
 app.use("/api/", indexApiRoutes);
 
 app.listen(PORT, HOST, () => {
