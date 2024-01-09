@@ -5,7 +5,6 @@ const findAll = async () => {
     const query = "SELECT * FROM recipes";
     const result = await db.query(query);
     if (result.rowCount > 0) {
-      console.log(result.rows);
       return { success: true, recipes: result.rows };
     } else {
       return { success: true, recipes: [] };
