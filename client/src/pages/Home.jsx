@@ -11,7 +11,7 @@ function Home({ users, message }) {
 
   useEffect(()=> {
     axios.get("http://localhost:8080/api/topratedrecipes")
-      .then((data) => setTopRecipes(data.recipes))
+      .then((response) => setTopRecipes(response.data.recipes))
   }, [])
 
   return (
