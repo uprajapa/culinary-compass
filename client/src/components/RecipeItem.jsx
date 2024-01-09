@@ -1,8 +1,9 @@
 import React from 'react';
 import "./recipeitem.css";
 
-const RecipeItem = () => {
-
+const RecipeItem = (props) => {
+  const { recipe_name, chef_name, time, cuisine, description} = props;
+  
   return (
   <div className="recipe-list-item">
         <div className="profile-pic">
@@ -10,12 +11,12 @@ const RecipeItem = () => {
         </div>
         <div className="profile-info">
           <div className="recipe-title">
-            <p>Recipe Name by Chef Name</p>
+            <p>{recipe_name} by {chef_name}</p>
           </div>
-          <p>Time:</p>
+          <p>Time: {time} minutes</p>
           <p>Est Budget:</p>
-          <p>Cuisine:</p>
-          <p>Description:</p>
+          <p>Cuisine: {cuisine}</p>
+          <p>Description: {description}</p>
         </div>
         <div>
 
