@@ -17,9 +17,11 @@ const verifyToken = require("./src/middleware/authMiddleware");
 const indexApiRoutes = require("./src/routes/index");
 const usersApiRoutes = require("./src/routes/users");
 const recipesApiRoutes = require("./src/routes/recipes");
+const topRatedRecipesApiRoutes = require("./src/routes/topRatedRecipes")
 
 app.use("/api/users", usersApiRoutes);
 app.use("/api/recipes", recipesApiRoutes);
+app.use("/api/topratedrecipes", topRatedRecipesApiRoutes);
 app.use("/api/", indexApiRoutes);
 
 app.listen(PORT, HOST, () => {
