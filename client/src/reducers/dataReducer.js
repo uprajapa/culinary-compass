@@ -1,14 +1,9 @@
-export const LOAD_USERS = "LOAD_USERS";
 export const UNAUTHORIZED = "UNAUTHORIZED";
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
 
 const dataReducer = (state, action) => {
   const actions = {
-    LOAD_USERS: {
-      ...state,
-      users: action.payload,
-    },
     UNAUTHORIZED: {
       ...state,
       message: action.message,
