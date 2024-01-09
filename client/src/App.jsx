@@ -9,16 +9,18 @@ import Login from "./pages/Login";
 function App() {
   const { state, dispatch } = useUsers();
   return (
-    <Router>
-      <NavBar />
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/"
-          element={<Home users={state.users} message={state.message} />}
-        />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/"
+            element={<Home users={state.users} message={state.message} />}
+          />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
