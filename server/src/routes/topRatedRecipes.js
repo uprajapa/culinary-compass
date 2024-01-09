@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const recipesQueries = require("../db/queries/topRatedRecipes");
+const recipesQueries = require("../db/queries/recipes");
 
 router.get("/", (req, res) => {
   recipesQueries
