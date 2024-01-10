@@ -4,12 +4,14 @@
   width: 70%;
   align-self: center;
   border: 3px;
-  border-color: brown;
+  border-color: black;
   border-style: solid;
   padding: 5px;
   margin: 10px;
-  background-color: blanchedalmond;
-  
+  background-color: white;
+  font-family: 'Bad Script', cursive;
+  font-weight: bold;
+  font-size: 2rem;
 }
 
 .recipe-title {
