@@ -1,5 +1,5 @@
 import React from 'react';
-import "./recipeitem.css";
+import "../../public/css/recipeitem.css";
 
 const RecipeItem = (props) => {
   const { recipe_name, chef_name, time, cuisine, description} = props;
