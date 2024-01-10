@@ -40,17 +40,30 @@ VALUES
                 'https://www.youtube.com/watch?v=qH__o17xHls'
         ),
         (
-          01,
-          'Indian',
-          'Brian Lagerstrom',
-          'Indian Curry',
-          05,
-          15,
-          04,
-          'super quick Indian-inspired dish',
-          '2lbs/1kg boneless skinless chicken thighs, salt, Neutral oil (i’m using light olive oil), 1 medium white onion, cut into chunks, 2-3”/5-7cm ginger, cut into coins, 5-7 garlic cloves, 15g or 2.5Tbsp curry powder, 5g or 2tsp chili powder, 5g or 1 3/4tsp cumin, 5g or 1 ¾ tsp turmeric, 15g or 2.5Tbsp garam masala, 1-2g or 1-1.5tsp  cayenne, 25g or 1.5Tbsp tomato paste, 300g or 1 1/3c water, 400g or 14oz tomato puree (½ of a 28oz can), Sugar, XL handful baby spinach (1 bag), 50-75g or 1/2c frozen peas, 30-40g or ⅛-1/4c  heavy cream',
-          'Instructions in Video',
-          'https://www.youtube.com/watch?v=ZYzBiHYOULs'
-        )
+                01,
+                'Indian',
+                'Brian Lagerstrom',
+                'Indian Curry',
+                05,
+                15,
+                04,
+                'super quick Indian-inspired dish',
+                '2lbs/1kg boneless skinless chicken thighs, salt, Neutral oil (i’m using light olive oil), 1 medium white onion, cut into chunks, 2-3”/5-7cm ginger, cut into coins, 5-7 garlic cloves, 15g or 2.5Tbsp curry powder, 5g or 2tsp chili powder, 5g or 1 3/4tsp cumin, 5g or 1 ¾ tsp turmeric, 15g or 2.5Tbsp garam masala, 1-2g or 1-1.5tsp  cayenne, 25g or 1.5Tbsp tomato paste, 300g or 1 1/3c water, 400g or 14oz tomato puree (½ of a 28oz can), Sugar, XL handful baby spinach (1 bag), 50-75g or 1/2c frozen peas, 30-40g or ⅛-1/4c  heavy cream',
+                'Instructions in Video',
+                'https://www.youtube.com/watch?v=ZYzBiHYOULs'
+        ),
+        (
+                01,
+                'Mexican',
+                'The Cooking Foodie',
+                'Guacamole',
+                05,
+                05,
+                03,
+                'Learn how to make the best guacamole! This recipe is so easy to make, only 6 ingredients, and few minutes of work and have fresh, creamy and delicious authentic guacamole. Serve it as a dip with some tortilla chips.',
+                '3 medium avocados, ripe, 1 Tomato, cored and chopped (optional), 1 green chili or jalapeño, finely chopped, 1/2 small red/while onion, finely chopped, 2-3 tablespoons Cilantro, finely chopped, 1 small Lemon/lime, juiced, Salt to taste',
+                '1. Slice the avocados in half, remove the pit and skin and place in a mixing bowl., 2. Add lime/lemon juice, mash the avocado with a fork or with a potato masher and make it as chunky or smooth as you like. Add chopped chili/ jalapeño, chopped onion, chopped cilantro, chopped tomato and salt. Stir until well combined., 3. Taste and season with extra salt or lemon juice., 4. Serve with tortilla chips.',
+                'https://www.youtube.com/watch?v=K06J2pFY6yU'
+        );
 
 --  https://www.budgetbytes.com/hearty-black-bean-quesadillas/
