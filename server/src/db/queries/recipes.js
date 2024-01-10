@@ -17,7 +17,7 @@ const findAll = async () => {
 
 const findTopRatedRecipes = async () => {
   try {
-    const query = "SELECT * FROM recipes JOIN ratings ON recipes.id = recipe_id WHERE rating > 4;";
+    const query = "SELECT recipes.id AS recipes_id, recipes.chef_name, recipes.recipe_name, recipes.cook_time, recipes.cuisine, recipes.description FROM ratings JOIN recipes ON recipes.id = ratings.recipe_id WHERE rating > 4 GROUP BY recipe_id, recipes.id, recipes.video_link;";
     const result = await db.query(query);
     if (result.rowCount > 0) {
       console.log(result.rows);
