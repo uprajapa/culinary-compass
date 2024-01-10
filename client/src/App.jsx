@@ -10,14 +10,16 @@ import useRecipes from "./hooks/useRecipes";
 function App() {
   const { recipes } = useRecipes();
   return (
-    <Router>
-      <NavBar />
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/recipes" element={<Recipes recipes={recipes} />} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/recipes" element={<Recipes recipes={recipes} />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
