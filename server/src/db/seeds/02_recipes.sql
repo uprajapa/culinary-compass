@@ -38,6 +38,19 @@ VALUES
                 '3 tbsp cooking oil, 4 eggs, beaten with pinch of salt, 4 cups cold jasmine rice, 2 tbsp soy sauce, pinch of salt, 4 sliced green onions',
                 'Instructions in video',
                 'https://www.youtube.com/watch?v=qH__o17xHls'
-        );
+        ),
+        (
+          03,
+          'Indian',
+          'Brian Lagerstrom',
+          'Indian Curry',
+          05,
+          15,
+          04,
+          'super quick Indian-inspired dish',
+          '2lbs/1kg boneless skinless chicken thighs, salt, Neutral oil (i’m using light olive oil), 1 medium white onion, cut into chunks, 2-3”/5-7cm ginger, cut into coins, 5-7 garlic cloves, 15g or 2.5Tbsp curry powder, 5g or 2tsp chili powder, 5g or 1 3/4tsp cumin, 5g or 1 ¾ tsp turmeric, 15g or 2.5Tbsp garam masala, 1-2g or 1-1.5tsp  cayenne, 25g or 1.5Tbsp tomato paste, 300g or 1 1/3c water, 400g or 14oz tomato puree (½ of a 28oz can), Sugar, XL handful baby spinach (1 bag), 50-75g or 1/2c frozen peas, 30-40g or ⅛-1/4c  heavy cream',
+          'Instructions in Video',
+          'https://www.youtube.com/watch?v=ZYzBiHYOULs'
+        )
 
 --  https://www.budgetbytes.com/hearty-black-bean-quesadillas/
