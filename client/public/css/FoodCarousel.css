@@ -1,0 +1,12 @@
+.carousel {
+
+  width: 90%;
+  object-fit: fill;
+  margin-top: 65px;
+  margin-bottom: 10px;
+  align-self: center;
+  background-color: black;
+  border: 3px;
+  border-color: black;
+
+}
