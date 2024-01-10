@@ -2,22 +2,21 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import Home from "../src/pages/Home";
-import useUsers from "./hooks/useUsers";
 import NavBar from "./components/NavBar";
+import Recipes from "../src/pages/Recipes";
 import Login from "./pages/Login";
+import useRecipes from "./hooks/useRecipes";
 
 function App() {
-  const { state, dispatch } = useUsers();
+  const { recipes } = useRecipes();
   return (
     <>
       <Router>
         <NavBar />
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route
-            path="/"
-            element={<Home users={state.users} message={state.message} />}
-          />
+          <Route path="/" element={<Home />} />
+          <Route path="/recipes" element={<Recipes recipes={recipes} />} />
         </Routes>
       </Router>
     </>
