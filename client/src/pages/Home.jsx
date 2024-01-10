@@ -12,6 +12,7 @@ function Home({ users, message }) {
   useEffect(()=> {
     axios.get("http://localhost:8080/api/topratedrecipes")
       .then((response) => setTopRecipes(response.data.recipes))
+      .catch(err => console.error('Error fetching recipes', err))
   }, [])
 
   return (
