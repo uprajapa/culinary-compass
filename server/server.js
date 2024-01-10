@@ -17,14 +17,14 @@ const verifyToken = require("./src/middleware/authMiddleware");
 const indexApiRoutes = require("./src/routes/index");
 const usersApiRoutes = require("./src/routes/users");
 const recipesApiRoutes = require("./src/routes/recipes");
-const topRatedRecipesApiRoutes = require("./src/routes/topRatedRecipes")
-const topThreeRecipes = require("./src/routes/topThreeRecipes")
+const topRatedRecipesApiRoutes = require("./src/routes/topRatedRecipes");
+const topThreeRecipes = require("./src/routes/topThreeRecipes");
 
 app.use("/api/users", usersApiRoutes);
 app.use("/api/recipes", recipesApiRoutes);
 app.use("/api/topratedrecipes", topRatedRecipesApiRoutes);
 app.use("/api/", indexApiRoutes);
-app.use("/api/topthreerecipes", topThreeRecipes)
+app.use("/api/topthreerecipes", topThreeRecipes);
 
 app.listen(PORT, HOST, () => {
   console.log(`Example app listening on port ${PORT}`);
