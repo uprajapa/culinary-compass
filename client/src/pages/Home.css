@@ -12,6 +12,9 @@
   margin-bottom: 10px;
   align-self: center;
   background-color: white;
+  border: 3px;
+  border-color: black;
+
 }
 
 img {
