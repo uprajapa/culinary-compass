@@ -1,7 +1,7 @@
 .recipe-list-item {
   display: flex;
   justify-content: space-between;
-  width: 1000px;
+  width: 1200px;
   align-self: center;
   border: 3px;
   border-color: black;
