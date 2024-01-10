@@ -4,16 +4,18 @@ import RecipeItemList from "../components/RecipeItemList";
 import RecipeItem from "../components/RecipeItem";
 import axios from 'axios';
 import useTopRecipes from '../hooks/useTopRecipes';
+import useTopThreeRecipes from '../hooks/useTopThreeRecipes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Home.css";
 
 function Home({ users, message }) {
   
   const { topRecipes } = useTopRecipes();
+  const { topThreeRecipes } = useTopThreeRecipes
   
   return (
     <div className="home">
-        <FoodCarousel />
+        <FoodCarousel topThreeRecipes={topThreeRecipes}/>
         <RecipeItemList topRecipes={topRecipes} />
     </div>
   );

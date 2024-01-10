@@ -1,7 +1,8 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import "../../public/css/FoodCarousel.css";
-const FoodCarousel = () => {
+const FoodCarousel = (props) => {
+  const { topThreeRecipes } = props;
   return (
     <div className="carousel">
       <Carousel>
