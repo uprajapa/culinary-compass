@@ -3,18 +3,14 @@ import FoodCarousel from "../components/FoodCarousel";
 import RecipeItemList from "../components/RecipeItemList";
 import RecipeItem from "../components/RecipeItem";
 import axios from 'axios';
+import useTopRecipes from '../hooks/useTopRecipes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Home.css";
 
 function Home({ users, message }) {
-  const [topRecipes, setTopRecipes] = useState([])
-
-  useEffect(()=> {
-    axios.get("http://localhost:8080/api/topratedrecipes")
-      .then((response) => setTopRecipes(response.data.recipes))
-      .catch(err => console.error('Error fetching recipes', err))
-  }, [])
-
+  
+  const { topRecipes } = useTopRecipes();
+  
   return (
     <div className="home">
         <FoodCarousel />
