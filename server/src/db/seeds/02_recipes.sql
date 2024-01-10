@@ -40,7 +40,7 @@ VALUES
                 'https://www.youtube.com/watch?v=qH__o17xHls'
         ),
         (
-          03,
+          01,
           'Indian',
           'Brian Lagerstrom',
           'Indian Curry',
