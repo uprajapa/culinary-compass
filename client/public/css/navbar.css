@@ -14,14 +14,13 @@
   border-bottom: 1px solid black;
   box-shadow: 0 5px 4px 0 rgba(0,0,0,.2);
   font-size: 3rem;
-
+  z-index: 1000;
 }
 .container {
   display: flex;
   justify-content: space-between;
   text-align: center;
   width: 100%;
-  z-index: 1000;
 }
 .nav div.logo {
   width: auto;
