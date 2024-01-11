@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import useLogout from "../hooks/useLogout";
 
-const NavBarList = () => {
+const NavBarList = ({ cuisines }) => {
   const { logout } = useLogout();
+  const allCuisine = cuisines.map((cuisine) => {
+    console.log(cuisine.name);
+  });
+  console.log("All cuisines: ", allCuisine);
   return (
     <ul className="navlinks">
       {localStorage.getItem("email") !== "null" ? (
@@ -13,11 +17,10 @@ const NavBarList = () => {
 
       <li>
         <div className="dropdown">
-          Cuisine
+          Cuisines
           <div className="dropdown-content">
             <p>Cuisine 1</p>
-            <p>Cuisine 2</p>
-            <p>Cuisine 3</p>
+            {allCuisine}
           </div>
         </div>
       </li>
@@ -26,7 +29,7 @@ const NavBarList = () => {
       </li>
       <li className="searchBar">
         <input type="text" placeholder="Search"></input>
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <button type="submit"><i className="fa fa-search"></i></button>
       </li>
       <li>
         {localStorage.getItem("token") ? (

@@ -14,7 +14,8 @@
   border-bottom: 1px solid black;
   box-shadow: 0 5px 4px 0 rgba(0,0,0,.2);
   font-size: 3rem;
-
+  
+  top: 0;
 }
 .container {
   display: flex;
