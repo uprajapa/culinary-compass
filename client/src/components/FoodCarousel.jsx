@@ -1,9 +1,10 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import "../../public/css/FoodCarousel.css";
+
 const FoodCarousel = (props) => {
   const { topThreeRecipes } = props;
-  
+
   return (
     <div className="carousel">
       <Carousel>
@@ -15,7 +16,9 @@ const FoodCarousel = (props) => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item controls={true}>
-          <img src="https://www.budgetbytes.com/wp-content/uploads/2012/02/Hearty-Black-Bean-Quesadillas-V3.jpg"/>
+          <img 
+            className="d-block w-100"
+            src="https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/8I37NtDffNV7AZlDa7uDvvqhovU.jpg"/>
           <Carousel.Caption>
             <h3>{topThreeRecipes[1].recipe_name}</h3>
             <p>{topThreeRecipes[1].description}</p>
