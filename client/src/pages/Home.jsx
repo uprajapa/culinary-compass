@@ -10,12 +10,12 @@ import "./Home.css";
 
 function Home({ users, message }) {
   
-  const { topRecipes } = useTopRecipes();
-  const { topThreeRecipes } = useTopThreeRecipes
-  
+  const { topRecipes  } = useTopRecipes();
+  const { topThreeRecipes } = useTopThreeRecipes()
+
   return (
     <div className="home">
-        <FoodCarousel topThreeRecipes={topThreeRecipes}/>
+        {topThreeRecipes.length && <FoodCarousel topThreeRecipes={topThreeRecipes}/>}
         <RecipeItemList topRecipes={topRecipes} />
     </div>
   );
