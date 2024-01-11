@@ -6,8 +6,8 @@ const useTopThreeRecipes = () => {
 
   useEffect(() => {
     axios.get("http://localhost:8080/api/topthreerecipes")
-      .then((response) => setTopThreeRecipes(response.data.recipes))
-      .catch((err) => console.error("Error fetching recipes", err))
+    .then((response) => setTopThreeRecipes(response.data.recipes))
+      .catch(err => console.error("Error fetching recipes", err))
   }, []);
 
   return { topThreeRecipes }

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const useTopRecipes = () => {
     const [topRecipes, setTopRecipes] = useState([])
-
+    
     useEffect(()=> {
       axios.get("http://localhost:8080/api/topratedrecipes")
         .then((response) => setTopRecipes(response.data.recipes))
@@ -13,5 +13,6 @@ const useTopRecipes = () => {
     
     return { topRecipes }
   }
-
+  
+  
   export default useTopRecipes;
