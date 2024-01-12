@@ -8,13 +8,15 @@ const FoodCarousel = (props) => {
   return (
     <div className="carousel">
       <Carousel>
-        <Carousel.Item controls={true}>
-          <img src="https://www.closetcooking.com/wp-content/uploads/2008/08/Corn-and-Black-Bean-Quesadillas-500.jpg" />
-          <Carousel.Caption>
-            <h3>{topThreeRecipes[0].recipe_name}</h3>
-            <p>{topThreeRecipes[0].description}</p>
-          </Carousel.Caption>
-        </Carousel.Item>
+          
+            <Carousel.Item controls={true}>
+                <img className="first-pic" src="https://www.closetcooking.com/wp-content/uploads/2008/08/Corn-and-Black-Bean-Quesadillas-500.jpg" />
+                <Carousel.Caption>
+                  <h3>{topThreeRecipes[0].recipe_name}</h3>
+                  <p>{topThreeRecipes[0].description}</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+          
         <Carousel.Item controls={true}>
           <img 
             className="d-block w-100"
@@ -25,7 +27,7 @@ const FoodCarousel = (props) => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item controls={true}>
-          <img src="https://www.budgetbytes.com/wp-content/uploads/2012/02/Hearty-Black-Bean-Quesadillas-V3.jpg"/>
+          <img className="first-pic" src="https://www.budgetbytes.com/wp-content/uploads/2012/02/Hearty-Black-Bean-Quesadillas-V3.jpg"/>
           <Carousel.Caption>
             <h3>{topThreeRecipes[2].recipe_name}</h3>
             <p>
