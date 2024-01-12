@@ -8,10 +8,10 @@ import useTopThreeRecipes from '../hooks/useTopThreeRecipes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Home.css";
 
-function Home({ users, message, favorite, handleFavorite }) {
+function Home({ users, message, favorite, handleFavorite, topRecipes, topThreeRecipes }) {
   
-  const { topRecipes  } = useTopRecipes();
-  const { topThreeRecipes } = useTopThreeRecipes()
+  // const { topRecipes  } = useTopRecipes();
+  // const { topThreeRecipes } = useTopThreeRecipes()
 
   return (
     <div className="home">
