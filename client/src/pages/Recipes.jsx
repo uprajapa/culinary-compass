@@ -2,13 +2,7 @@ import { useState } from "react";
 import ImageWithFavoriteIcon from "../components/ImageWithFavoriteIcon";
 
 function Recipes({ recipes, favorite, handleFavorite }) {
-  // const [favorite, setFavorite] = useState({});
-  // const handleFavorite = (recipeId) => {
-  //   setFavorite((prevFavorite) => ({
-  //     ...prevFavorite,
-  //     [recipeId]: !prevFavorite[recipeId],
-  //   }));
-  // };
+  
   return (
     <div className="m-8 border pt-32">
       {recipes &&
