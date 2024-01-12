@@ -4,7 +4,7 @@ CREATE TABLE
   recipes (
     id SERIAL PRIMARY KEY NOT NULL,
     user_id INTEGER REFERENCES users(id) NOT NULL,
-    cuisine VARCHAR(255) NOT NULL,
+    cuisine_id INTEGER REFERENCES cuisines(id) NOT NULL,
     chef_name VARCHAR(255) NOT NULL,
     recipe_name VARCHAR(255) NOT NULL,
     prep_time INTEGER,
