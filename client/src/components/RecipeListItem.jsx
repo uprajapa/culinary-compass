@@ -7,7 +7,7 @@ const RecipeListItem = (props) => {
   return (
   <div className="recipe-list-item">
         <div className="profile-pic">
-          <img src="https://www.budgetbytes.com/wp-content/uploads/2012/02/Hearty-Black-Bean-Quesadillas-V3.jpg"/>
+          <img src={photo_link}/>
         </div>
         <div className="profile-info">
           <div className="recipe-title">
