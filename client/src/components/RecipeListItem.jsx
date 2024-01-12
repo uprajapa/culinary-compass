@@ -16,7 +16,7 @@ const RecipeListItem = (props) => {
           <p>Time: {time} minutes</p>
           <p>Est Budget:</p>
           <p>Cuisine: {cuisine}</p>
-          <p>Description: {description}</p>
+          <span className="description">Description: {description}</span>
         </div>
         <div>
 

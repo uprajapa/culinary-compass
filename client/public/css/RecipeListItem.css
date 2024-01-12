@@ -2,10 +2,11 @@
   display: flex;
   justify-content: space-between;
   width: 1200px;
+  height: 400px;
   align-self: center;
   border: 3px;
   border-color: black;
-  border-style: solid;
+  border-style: double;
   padding: 5px;
   margin: 10px;
   background-color: white;
@@ -14,8 +15,21 @@
   font-size: 2rem;
 }
 
+.profile-info {
+  width: 800px;
+}
+.profile-pic {
+  display: flex;
+  width: 300px;
+}
+
 .recipe-title {
   font-size: 24px;
   margin-top: 10px;
   margin-bottom: 55px;
+}
+
+.description {
+  overflow: hidden;
+  white-space: wrap;
 }
