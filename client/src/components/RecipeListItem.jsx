@@ -1,4 +1,5 @@
 import React from 'react';
+import ImageWithFavoriteIcon from './ImageWithFavoriteIcon';
 import "../../public/css/recipelistitem.css";
 
 const RecipeListItem = (props) => {
@@ -7,7 +8,12 @@ const RecipeListItem = (props) => {
   return (
   <div className="recipe-list-item">
         <div className="profile-pic">
-          <img src={photo_link}/>
+        <ImageWithFavoriteIcon
+              imageUrl={photo_link}
+              isfavorite={favorite[recipe.id]}
+              onClick={() => handleFavorite(recipe.id)}
+            />
+          {/* <img src={photo_link}/> */}
         </div>
         <div className="profile-info">
           <div className="recipe-title">
