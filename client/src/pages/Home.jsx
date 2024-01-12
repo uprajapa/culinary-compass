@@ -1,17 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import FoodCarousel from "../components/FoodCarousel";
 import RecipeList from "../components/RecipeList";
-import RecipeItem from "../components/RecipeListItem";
-import axios from 'axios';
-import useTopRecipes from '../hooks/useTopRecipes';
-import useTopThreeRecipes from '../hooks/useTopThreeRecipes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Home.css";
 
-function Home({ users, message, favorite, handleFavorite, topRecipes, topThreeRecipes }) {
-  
-  // const { topRecipes  } = useTopRecipes();
-  // const { topThreeRecipes } = useTopThreeRecipes()
+function Home({ favorite, handleFavorite, topRecipes, topThreeRecipes }) {
 
   return (
     <div className="home">
@@ -22,11 +15,3 @@ function Home({ users, message, favorite, handleFavorite, topRecipes, topThreeRe
 }
 
 export default Home;
-
-{/* {message ? (
-  <p>{message}</p>
-) : (
-  <ul>
-    {users && users.map((user) => <li key={user.id}>{user.name}</li>)}
-  </ul>
-)} */}
