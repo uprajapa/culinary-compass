@@ -16,7 +16,7 @@ function Home({ users, message, favorite, handleFavorite }) {
   return (
     <div className="home">
         {topThreeRecipes.length && <FoodCarousel topThreeRecipes={topThreeRecipes}/>}
-        <RecipeList topRecipes={topRecipes} favorite={favorite} handleFavorite={handleFavorite}/>
+        <RecipeList recipes={topRecipes} favorite={favorite} handleFavorite={handleFavorite}/>
     </div>
   );
 }

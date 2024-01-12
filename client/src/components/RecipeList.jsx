@@ -3,9 +3,9 @@ import RecipeListItem from './RecipeListItem';
 
 const RecipeList = (props) => {
 
-  const { topRecipes, favorite, handleFavorite } = props;
+  const { recipes, favorite, handleFavorite } = props;
   
-  const recipeListArray = topRecipes.map((recipe)=>
+  const recipeListArray = recipes.map((recipe)=>
     <RecipeListItem 
     key={recipe.recipes_id}
     id={recipe.recipes_id}
