@@ -2,7 +2,7 @@ import React from 'react';
 import "../../public/css/recipelistitem.css";
 
 const RecipeListItem = (props) => {
-  const { recipe_name, chef_name, time, cuisine, description} = props;
+  const { recipe_name, chef_name, time, cuisine, description, photo_link } = props;
   
   return (
   <div className="recipe-list-item">

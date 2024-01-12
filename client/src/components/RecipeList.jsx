@@ -13,6 +13,7 @@ const RecipeList = (props) => {
     time={recipe.cook_time}
     cuisine={recipe.cuisine}
     description={recipe.description}
+    photo_link={recipe.photo_link}
     />
   );
   return(
