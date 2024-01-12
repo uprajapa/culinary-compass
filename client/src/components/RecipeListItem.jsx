@@ -1,7 +1,8 @@
 import React from 'react';
+import "../../public/css/recipelistitem.css";
 
-const RecipeItem = (props) => {
-  const { recipe_name, chef_name, time, cuisine, description } = props;
+const RecipeListItem = (props) => {
+  const { recipe_name, chef_name, time, cuisine, description, photo_link } = props;
 
   return (
     <div className="recipe-list-item">
@@ -15,14 +16,15 @@ const RecipeItem = (props) => {
         <p>Time: {time} minutes</p>
         <p>Est Budget:</p>
         <p>Cuisine: {cuisine}</p>
-        <p>Description: {description}</p>
+        <span className="description">Description: {description}</span>
       </div>
-      <div>
-
-      </div>
+      <p>Time: {time} minutes</p>
+      <p>Est Budget:</p>
+      <p>Cuisine: {cuisine}</p>
+      <p>Description: {description}</p>
     </div>
 
   )
 };
 
-export default RecipeItem;
+export default RecipeListItem;

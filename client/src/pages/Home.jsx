@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import FoodCarousel from "../components/FoodCarousel";
-import RecipeItemList from "../components/RecipeItemList";
-import RecipeItem from "../components/RecipeItem";
+import RecipeList from "../components/RecipeList";
+import RecipeItem from "../components/RecipeListItem";
 import axios from 'axios';
 import useTopRecipes from '../hooks/useTopRecipes';
 import useTopThreeRecipes from '../hooks/useTopThreeRecipes';
@@ -16,7 +16,7 @@ function Home({ users, message }) {
   return (
     <div className="home">
         {topThreeRecipes.length && <FoodCarousel topThreeRecipes={topThreeRecipes}/>}
-        <RecipeItemList topRecipes={topRecipes} />
+        <RecipeList topRecipes={topRecipes} />
     </div>
   );
 }

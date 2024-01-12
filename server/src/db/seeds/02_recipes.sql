@@ -40,7 +40,7 @@ VALUES
                 '3 tbsp cooking oil, 4 eggs, beaten with pinch of salt, 4 cups cold jasmine rice, 2 tbsp soy sauce, pinch of salt, 4 sliced green onions',
                 'Instructions in video',
                 'https://www.youtube.com/watch?v=qH__o17xHls',
-                'https://www.budgetbytes.com/wp-content/uploads/2012/02/Hearty-Black-Bean-Quesadillas-V3.jpg'
+                'https://images.pexels.com/photos/723198/pexels-photo-723198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
         ),
         (
                 01,
@@ -54,7 +54,7 @@ VALUES
                 '2lbs/1kg boneless skinless chicken thighs, salt, Neutral oil (i’m using light olive oil), 1 medium white onion, cut into chunks, 2-3”/5-7cm ginger, cut into coins, 5-7 garlic cloves, 15g or 2.5Tbsp curry powder, 5g or 2tsp chili powder, 5g or 1 3/4tsp cumin, 5g or 1 ¾ tsp turmeric, 15g or 2.5Tbsp garam masala, 1-2g or 1-1.5tsp  cayenne, 25g or 1.5Tbsp tomato paste, 300g or 1 1/3c water, 400g or 14oz tomato puree (½ of a 28oz can), Sugar, XL handful baby spinach (1 bag), 50-75g or 1/2c frozen peas, 30-40g or ⅛-1/4c  heavy cream',
                 'Instructions in Video',
                 'https://www.youtube.com/watch?v=ZYzBiHYOULs',
-                'https://www.budgetbytes.com/wp-content/uploads/2012/02/Hearty-Black-Bean-Quesadillas-V3.jpg'
+                'https://images.pexels.com/photos/19781596/pexels-photo-19781596/free-photo-of-curry-meal-with-garnish.jpeg'
         ),
         (
                 01,
@@ -68,7 +68,7 @@ VALUES
                 '3 medium avocados, ripe, 1 Tomato, cored and chopped (optional), 1 green chili or jalapeño, finely chopped, 1/2 small red/while onion, finely chopped, 2-3 tablespoons Cilantro, finely chopped, 1 small Lemon/lime, juiced, Salt to taste',
                 '1. Slice the avocados in half, remove the pit and skin and place in a mixing bowl., 2. Add lime/lemon juice, mash the avocado with a fork or with a potato masher and make it as chunky or smooth as you like. Add chopped chili/ jalapeño, chopped onion, chopped cilantro, chopped tomato and salt. Stir until well combined., 3. Taste and season with extra salt or lemon juice., 4. Serve with tortilla chips.',
                 'https://www.youtube.com/watch?v=K06J2pFY6yU',
-                'https://www.budgetbytes.com/wp-content/uploads/2012/02/Hearty-Black-Bean-Quesadillas-V3.jpg'
+                'https://images.pexels.com/photos/4562973/pexels-photo-4562973.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
         );
 
 --  https://www.budgetbytes.com/hearty-black-bean-quesadillas/
