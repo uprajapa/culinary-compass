@@ -1,33 +1,36 @@
 import { Link } from "react-router-dom";
 import useLogout from "../hooks/useLogout";
 
-const NavBarList = () => {
+const NavBarList = ({ cuisines }) => {
   const { logout } = useLogout();
+  const allCuisines = cuisines.map((cuisine) => <p key={cuisine.name}>{cuisine.name}</p>);
+
   return (
     <ul className="navlinks">
+      <li>
+        <div className="dropdown">
+          Cuisines
+          <div className="dropdown-content">
+            {allCuisines}
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <Link to="/popular">Popular</Link>
+      </li>
+
+      <li className="searchBar">
+        <input type="text" placeholder="Search"></input>
+        <button type="submit"><i className="fa fa-search"></i></button>
+      </li>
+
       {localStorage.getItem("email") !== "null" ? (
         <li>{localStorage.getItem("email")}</li>
       ) : (
         <li></li>
       )}
 
-      <li>
-        <div className="dropdown">
-          Cuisine
-          <div className="dropdown-content">
-            <p>Cuisine 1</p>
-            <p>Cuisine 2</p>
-            <p>Cuisine 3</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <Link to="/popular">Popular</Link>
-      </li>
-      <li className="searchBar">
-        <input type="text" placeholder="Search"></input>
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </li>
       <li>
         {localStorage.getItem("token") ? (
           <button onClick={logout}>Logout</button>

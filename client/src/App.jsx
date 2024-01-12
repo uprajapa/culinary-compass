@@ -6,13 +6,16 @@ import NavBar from "./components/NavBar";
 import Recipes from "../src/pages/Recipes";
 import Login from "./pages/Login";
 import useRecipes from "./hooks/useRecipes";
+import useCuisines from "./hooks/useCuisines";
 
 function App() {
   const { recipes } = useRecipes();
+  const { cuisines } = useCuisines();
+
   return (
     <>
       <Router>
-        <NavBar />
+        <NavBar cuisines={cuisines} />
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home />} />

@@ -17,11 +17,13 @@ const verifyToken = require("./src/middleware/authMiddleware");
 const indexApiRoutes = require("./src/routes/index");
 const usersApiRoutes = require("./src/routes/users");
 const recipesApiRoutes = require("./src/routes/recipes");
+const cuisinesApiRoutes = require("./src/routes/cuisines");
 const topRatedRecipesApiRoutes = require("./src/routes/topRatedRecipes");
 const topThreeRecipes = require("./src/routes/topThreeRecipes");
 
 app.use("/api/users", usersApiRoutes);
 app.use("/api/recipes", recipesApiRoutes);
+app.use("/api/cuisines", cuisinesApiRoutes);
 app.use("/api/topratedrecipes", topRatedRecipesApiRoutes);
 app.use("/api/", indexApiRoutes);
 app.use("/api/topthreerecipes", topThreeRecipes);

@@ -1,6 +1,5 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import "../../public/css/FoodCarousel.css";
 
 const FoodCarousel = (props) => {
   const { topThreeRecipes } = props;
@@ -27,7 +26,7 @@ const FoodCarousel = (props) => {
           <Carousel.Caption>
             <h3>{topThreeRecipes[2].recipe_name}</h3>
             <p>
-            {topThreeRecipes[2].description}
+              {topThreeRecipes[2].description}
             </p>
           </Carousel.Caption>
         </Carousel.Item>

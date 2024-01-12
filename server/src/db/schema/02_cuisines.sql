@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS cuisines CASCADE;
+
+CREATE TABLE
+    cuisines (
+        id SERIAL PRIMARY KEY NOT NULL,
+        name VARCHAR(255) UNIQUE NOT NULL
+    );
