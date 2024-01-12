@@ -16,7 +16,6 @@ const useCuisines = () => {
       const response = await axios.get(`${base_url}/api/cuisines`);
       if (response.status === 200) {
         const data = response.data;
-        console.log(data);
         setCuisines(data);
       }
     } catch (error) {
