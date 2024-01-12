@@ -1,11 +1,13 @@
 import React from 'react';
 import ImageWithFavoriteIcon from "../components/ImageWithFavoriteIcon";
+import RecipeList from '../components/RecipeList';
 
 function Recipes({ recipes, favorite, handleFavorite }) {
   
   return (
     <div className="m-8 border pt-32">
-      {recipes &&
+      <RecipeList recipes={recipes} favorite={favorite} handleFavorite={handleFavorite}/>
+      {/* {recipes &&
         recipes.map((recipe) => (
           <div
             key={recipe.id}
@@ -49,7 +51,7 @@ function Recipes({ recipes, favorite, handleFavorite }) {
               </div>
             </div>
           </div>
-        ))}
+        ))} */}
     </div>
   );
 }
