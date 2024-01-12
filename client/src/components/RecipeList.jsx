@@ -1,12 +1,12 @@
 import React from 'react';
-import RecipeItem from './RecipeItem';
+import RecipeListItem from './RecipeListItem';
 
-const RecipeItemList = (props) => {
+const RecipeList = (props) => {
 
   const { topRecipes } = props;
   
   const recipeListArray = topRecipes.map((recipe)=>
-    <RecipeItem 
+    <RecipeListItem 
     key={recipe.id}
     recipe_name={recipe.recipe_name}
     chef_name={recipe.chef_name}
@@ -22,4 +22,4 @@ const RecipeItemList = (props) => {
   );
 };
 
-export default RecipeItemList;
+export default RecipeList;

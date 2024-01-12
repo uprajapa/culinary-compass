@@ -1,7 +1,7 @@
 import React from 'react';
 import "../../public/css/recipeitem.css";
 
-const RecipeItem = (props) => {
+const RecipeListItem = (props) => {
   const { recipe_name, chef_name, time, cuisine, description} = props;
   
   return (
@@ -26,4 +26,4 @@ const RecipeItem = (props) => {
   )
 };
 
-export default RecipeItem;
+export default RecipeListItem;
