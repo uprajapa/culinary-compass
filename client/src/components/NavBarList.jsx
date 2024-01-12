@@ -3,7 +3,7 @@ import useLogout from "../hooks/useLogout";
 
 const NavBarList = ({ cuisines }) => {
   const { logout } = useLogout();
-  const allCuisines = cuisines.map((cuisine) => <p>{cuisine.name}</p>);
+  const allCuisines = cuisines.map((cuisine) => <p key={cuisine.name}>{cuisine.name}</p>);
 
   return (
     <ul className="navlinks">
