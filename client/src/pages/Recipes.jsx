@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from 'react';
 import ImageWithFavoriteIcon from "../components/ImageWithFavoriteIcon";
 
 function Recipes({ recipes, favorite, handleFavorite }) {
