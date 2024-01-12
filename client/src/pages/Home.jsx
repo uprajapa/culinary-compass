@@ -8,7 +8,7 @@ import useTopThreeRecipes from '../hooks/useTopThreeRecipes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Home.css";
 
-function Home({ users, message }) {
+function Home({ users, message, favorite, handleFavorite }) {
   
   const { topRecipes  } = useTopRecipes();
   const { topThreeRecipes } = useTopThreeRecipes()
@@ -16,7 +16,7 @@ function Home({ users, message }) {
   return (
     <div className="home">
         {topThreeRecipes.length && <FoodCarousel topThreeRecipes={topThreeRecipes}/>}
-        <RecipeList topRecipes={topRecipes} />
+        <RecipeList topRecipes={topRecipes} favorite={favorite} handleFavorite={handleFavorite}/>
     </div>
   );
 }

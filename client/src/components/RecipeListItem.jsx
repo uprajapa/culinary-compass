@@ -3,15 +3,15 @@ import ImageWithFavoriteIcon from './ImageWithFavoriteIcon';
 import "../../public/css/recipelistitem.css";
 
 const RecipeListItem = (props) => {
-  const { recipe_name, chef_name, time, cuisine, description, photo_link } = props;
+  const { recipe_name, chef_name, time, cuisine, description, photo_link, id, favorite, handleFavorite } = props;
   
   return (
   <div className="recipe-list-item">
         <div className="profile-pic">
         <ImageWithFavoriteIcon
               imageUrl={photo_link}
-              isfavorite={favorite[recipe.id]}
-              onClick={() => handleFavorite(recipe.id)}
+              isfavorite={favorite[id]}
+              onClick={() => handleFavorite(id)}
             />
           {/* <img src={photo_link}/> */}
         </div>

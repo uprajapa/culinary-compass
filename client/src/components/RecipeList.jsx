@@ -3,17 +3,20 @@ import RecipeListItem from './RecipeListItem';
 
 const RecipeList = (props) => {
 
-  const { topRecipes } = props;
+  const { topRecipes, favorite, handleFavorite } = props;
   
   const recipeListArray = topRecipes.map((recipe)=>
     <RecipeListItem 
-    key={recipe.id}
+    key={recipe.recipes_id}
+    id={recipe.recipes_id}
     recipe_name={recipe.recipe_name}
     chef_name={recipe.chef_name}
     time={recipe.cook_time}
     cuisine={recipe.cuisine}
     description={recipe.description}
     photo_link={recipe.photo_link}
+    favorite={favorite}
+    handleFavorite={handleFavorite}
     />
   );
   return(

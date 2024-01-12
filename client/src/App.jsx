@@ -22,7 +22,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home favorite={favorite} handleFavorite={handleFavorite}/>} />
           <Route path="/recipes" element={<Recipes recipes={recipes} favorite={favorite} handleFavorite={handleFavorite}/>} />
         </Routes>
       </Router>
