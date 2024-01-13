@@ -2,7 +2,7 @@ const db = require("../connection");
 
 const findAll = async () => {
   try {
-    const query = "SELECT * FROM recipes";
+    const query = "SELECT *, cuisines.name As cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id;";
     const result = await db.query(query);
     if (result.rowCount > 0) {
       return { success: true, recipes: result.rows };
