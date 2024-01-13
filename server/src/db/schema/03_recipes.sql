@@ -5,6 +5,7 @@ CREATE TABLE
     id SERIAL PRIMARY KEY NOT NULL,
     user_id INTEGER REFERENCES users(id) NOT NULL,
     cuisine_id INTEGER REFERENCES cuisines(id) NOT NULL,
+    budget INTEGER,
     chef_name VARCHAR(255) NOT NULL,
     recipe_name VARCHAR(255) NOT NULL,
     prep_time INTEGER,
