@@ -16,7 +16,7 @@ const findAll = async () => {
 
 const findTopRatedRecipes = async () => {
   try {
-    const query = "SELECT recipes.id, recipes.chef_name, recipes.recipe_name, recipes.cook_time, recipes.cuisine_id, recipes.description, recipes.photo_link FROM ratings JOIN recipes ON recipes.id = ratings.recipe_id WHERE rating > 4 GROUP BY recipe_id, recipes.id, recipes.video_link;";
+    const query = "SELECT recipes.id, recipes.chef_name, recipes.recipe_name, recipes.cook_time, cuisines.name AS cuisine_name, recipes.description, recipes.photo_link FROM ratings JOIN recipes ON recipes.id = ratings.recipe_id JOIN cuisines ON cuisines.id = recipes.cuisine_id  WHERE rating > 4 GROUP BY recipe_id, recipes.id, recipes.video_link, cuisines.name;";
     const result = await db.query(query);
     if (result.rowCount > 0) {
       return { success: true, recipes: result.rows };
@@ -29,7 +29,7 @@ const findTopRatedRecipes = async () => {
 };
 const findTopThreeRecipes = async () => {
   try {
-    const query = "SELECT recipes.id, recipes.chef_name, recipes.recipe_name, recipes.cook_time, recipes.cuisine_id, recipes.description, recipes.photo_link FROM ratings JOIN recipes ON recipes.id = ratings.recipe_id WHERE rating > 4 GROUP BY recipe_id, recipes.id, recipes.video_link LIMIT 3;";
+    const query = "SELECT recipes.id, recipes.chef_name, recipes.recipe_name, recipes.cook_time, cuisines.name AS cuisine_name, recipes.description, recipes.photo_link FROM ratings JOIN recipes ON recipes.id = ratings.recipe_id JOIN cuisines ON cuisines.id = recipes.cuisine_id  WHERE rating > 4 GROUP BY recipe_id, recipes.id, recipes.video_link, cuisines.name LIMIT 3;";
     const result = await db.query(query);
     if (result.rowCount > 0) {
       console.log(result.rows);
