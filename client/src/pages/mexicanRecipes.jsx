@@ -2,7 +2,7 @@ import React from 'react';
 import RecipeList from '../components/RecipeList';
 import "../../public/css/recipe.css"
 
-function mexicanRecipes({ recipes, favorite, handleFavorite }) {
+function MexicanRecipes({ recipes, favorite, handleFavorite }) {
   console.log(recipes)
   return (
     <div className="recipe">
@@ -12,4 +12,4 @@ function mexicanRecipes({ recipes, favorite, handleFavorite }) {
   )
 };
 
-export default mexicanRecipes;
+export default MexicanRecipes;
