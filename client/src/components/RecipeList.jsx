@@ -13,7 +13,7 @@ const RecipeList = (props) => {
     chef_name={recipe.chef_name}
     budget={recipe.budget}
     time={recipe.cook_time}
-    cuisine={recipe.cuisine}
+    cuisine={recipe.cuisine_name}
     description={recipe.description}
     photo_link={recipe.photo_link}
     favorite={favorite}
