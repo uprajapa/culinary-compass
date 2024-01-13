@@ -11,6 +11,7 @@ const RecipeList = (props) => {
     id={recipe.id}
     recipe_name={recipe.recipe_name}
     chef_name={recipe.chef_name}
+    budget={recipe.budget}
     time={recipe.cook_time}
     cuisine={recipe.cuisine}
     description={recipe.description}
