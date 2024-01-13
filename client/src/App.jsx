@@ -8,11 +8,13 @@ import Login from "./pages/Login";
 import useRecipes from "./hooks/useRecipes";
 import useTopRecipes from "./hooks/useTopRecipes";
 import useTopThreeRecipes from "./hooks/useTopThreeRecipes";
+import useCuisines from "./hooks/useCuisines";
 
 function App() {
   const { topRecipes  } = useTopRecipes();
   const { topThreeRecipes } = useTopThreeRecipes()
   const { recipes } = useRecipes();
+  const { cuisines } = useCuisines();
   const [favorite, setFavorite] = useState({});
   const handleFavorite = (recipeId) => {
     setFavorite((prevFavorite) => ({
@@ -20,10 +22,11 @@ function App() {
       [recipeId]: !prevFavorite[recipeId],
     }));
   };
+
   return (
     <>
       <Router>
-        <NavBar />
+        <NavBar cuisines={cuisines} />
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home topRecipes={topRecipes} topThreeRecipes={topThreeRecipes} favorite={favorite} handleFavorite={handleFavorite}/>} />

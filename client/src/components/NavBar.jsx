@@ -2,7 +2,7 @@
 import NavBarList from "./NavBarList";
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({ cuisines }) => {
   return (
     <nav className="nav">
       <div className="container">
@@ -10,7 +10,7 @@ const NavBar = () => {
           <Link to="/">Culinary Compass</Link>
         </div>
         <div id="mainListDiv" className="main_list">
-          <NavBarList />
+          <NavBarList cuisines={cuisines} />
         </div>
       </div>
     </nav>

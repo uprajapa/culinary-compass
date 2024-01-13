@@ -1,7 +1,7 @@
 INSERT INTO
         recipes (
                 user_id,
-                cuisine,
+                cuisine_id,
                 chef_name,
                 recipe_name,
                 prep_time,
@@ -16,7 +16,7 @@ INSERT INTO
 VALUES
         (
                 01,
-                'Mexican',
+                05,
                 'Beth',
                 'Hearty Black Bean Quesadillas',
                 05,
@@ -30,7 +30,7 @@ VALUES
         ),
         (
                 02,
-                'Korean',
+                04,
                 'Seonkyoung',
                 'Easy Egg Fried Rice',
                 05,
@@ -44,7 +44,7 @@ VALUES
         ),
         (
                 01,
-                'Indian',
+                03,
                 'Brian Lagerstrom',
                 'Indian Curry',
                 05,
@@ -58,7 +58,7 @@ VALUES
         ),
         (
                 01,
-                'Mexican',
+                05,
                 'The Cooking Foodie',
                 'Guacamole',
                 05,
