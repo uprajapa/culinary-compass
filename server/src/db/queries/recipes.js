@@ -55,5 +55,19 @@ const findItalianRecipes = async () => {
     return { success: false, message: error };
   }
 };
+const findJapaneseRecipes = async () => {
+  try {
+    const query = "SELECT *, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Japanese';";
+    const result = await db.query(query);
+    if (result.rowCount > 0) {
+      console.log(result.rows);
+      return { success: true, recipes: result.rows };
+    } else {
+      return { success: true, recipes: [] };
+    }
+  } catch (error) {
+    return { success: false, message: error };
+  }
+};
 
-module.exports = { findAll, findTopRatedRecipes, findTopThreeRecipes, findItalianRecipes };
+module.exports = { findAll, findTopRatedRecipes, findTopThreeRecipes, findItalianRecipes, findJapaneseRecipes };
