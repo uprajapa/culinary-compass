@@ -7,6 +7,7 @@ function KoreanRecipes({ recipes, favorite, handleFavorite }) {
   return (
     <div className="recipe">
       <h1 className="title">Korean Recipes</h1>
+      {recipes.length == 0 && <h1 className="title">No Recipes Yet. Why don't you add one?</h1>}
       <RecipeList recipes={recipes} favorite={favorite} handleFavorite={handleFavorite}/>
     </div>
   )
