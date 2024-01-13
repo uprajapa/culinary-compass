@@ -20,8 +20,11 @@ const recipesApiRoutes = require("./src/routes/recipes");
 const cuisinesApiRoutes = require("./src/routes/cuisines");
 const topRatedRecipesApiRoutes = require("./src/routes/topRatedRecipes");
 const topThreeRecipes = require("./src/routes/topThreeRecipes");
-const italianRecipes = require("./src/routes/italianRecipes")
-const japaneseRecipes = require("./src/routes/japaneseRecipes")
+const italianRecipes = require("./src/routes/italianRecipes");
+const japaneseRecipes = require("./src/routes/japaneseRecipes");
+const indianRecipes = require("./src/routes/indianRecipes");
+const koreanRecipes = require("./src/routes/koreanRecipes");
+const mexicanRecipes = require("./src/routes/mexicanRecipes");
 
 app.use("/api/users", usersApiRoutes);
 app.use("/api/recipes", recipesApiRoutes);
@@ -31,6 +34,9 @@ app.use("/api/", indexApiRoutes);
 app.use("/api/topthreerecipes", topThreeRecipes);
 app.use("/api/italianrecipes", italianRecipes);
 app.use("/api/japaneserecipes", japaneseRecipes);
+app.use("/api/indianrecipes", indianRecipes);
+app.use("/api/koreanrecipes", koreanRecipes);
+app.use("/api/mexicanrecipes", mexicanRecipes);
 
 app.listen(PORT, HOST, () => {
   console.log(`Example app listening on port ${PORT}`);
