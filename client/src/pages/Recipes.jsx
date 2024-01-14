@@ -3,10 +3,11 @@ import RecipeList from '../components/RecipeList';
 import "../../public/css/recipe.css"
 
 function Recipes({ recipes, favorite, handleFavorite }) {
-  console.log(recipes)
+  
   return (
     <div className="recipe">
       <h1 className="title">All Recipes</h1>
+      {recipes.length == 0 && <h1 className="title">No Recipes Yet. Why don't you add one?</h1>}
       <RecipeList recipes={recipes} favorite={favorite} handleFavorite={handleFavorite}/>
     </div>
     // <div className="m-8 border pt-32">
