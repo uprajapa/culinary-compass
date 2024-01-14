@@ -1,4 +1,5 @@
 export const UNAUTHORIZED = "UNAUTHORIZED";
+export const MODAL_LOGIN = "MODAL_LOGIN";
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
 
@@ -15,6 +16,10 @@ const dataReducer = (state, action) => {
     },
     LOGOUT: {
       removeLocal: action.removeLocal,
+    },
+    MODAL_LOGIN: {
+      ...state,
+      isModalOpenLogin: !state.isModalOpenLogin,
     },
   };
 
