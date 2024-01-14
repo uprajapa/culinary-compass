@@ -20,7 +20,7 @@ const useLogin = ({ closeModalLogin }) => {
         await localStorage.setItem("email", response.data.email);
         setError(false);
         setMessageError("");
-        navigate("/");
+        closeModalLogin();
       }
       setError(true);
       setMessageError(response.data.message);
