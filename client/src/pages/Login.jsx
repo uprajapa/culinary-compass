@@ -1,13 +1,33 @@
+import { useState } from "react";
 import ErrorMessage from "../components/ErrorMessage";
 import useLogin from "../hooks/useLogin";
 
-const Login = () => {
-  const { email, setEmail, password, setPassword, login, error, messageError } =
-    useLogin();
+const Login = ({ closeModal }) => {
+  const [isLogin, setIsLogin] = useState(true);
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    login,
+    error,
+    messageError,
+    newUser,
+  } = useLogin();
+
+  const handleToogle = () => {
+    setIsLogin(!isLogin);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (isLogin) {
+      login();
+    } else {
+      newUser();
+    }
     login();
+    closeModal();
   };
   return (
     <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
@@ -19,7 +39,7 @@ const Login = () => {
           alt="Your Company"
         />
         <h2 className="mt-10 text-center text-5xl font-bold leading-9 tracking-tight text-gray-900">
-          Sign in to your account
+          {isLogin ? <span>Login</span> : <span>New account</span>}
         </h2>
       </div>
 
@@ -30,7 +50,7 @@ const Login = () => {
               htmlFor="email"
               className="block text-2xl font-medium  leading-6 text-gray-900"
             >
-              Email address
+              Email
             </label>
             <div className="mt-2">
               <input
@@ -41,7 +61,7 @@ const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 autoComplete="email"
                 required
-                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm p-4 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-2xl"
               />
             </div>
           </div>
@@ -54,14 +74,6 @@ const Login = () => {
               >
                 Password
               </label>
-              <div className="text-sm">
-                <a
-                  href="#"
-                  className="font-semibold text-l text-indigo-600 hover:text-indigo-500"
-                >
-                  Forgot password?
-                </a>
-              </div>
             </div>
             <div className="mt-2">
               <input
@@ -72,7 +84,7 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 autoComplete="current-password"
                 required
-                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-4 text-2xl"
               />
             </div>
           </div>
@@ -83,19 +95,35 @@ const Login = () => {
               onClick={handleSubmit}
               className="flex w-full justify-center rounded-md bg-indigo-600 px-4 py-4 text-2xl font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Sign in
+              Submit
             </button>
           </div>
         </form>
 
         <p className="mt-10 text-center text-2xl text-gray-500">
-          Not a member?
-          <a
-            href="#"
-            className="font-semibold text-2xl italic leading-6 text-indigo-600 hover:text-indigo-500"
-          >
-            click me
-          </a>
+          {isLogin ? (
+            <>
+              <span>Not a member?</span>
+              <a
+                href="#"
+                className="font-semibold text-2xl italic leading-6 text-indigo-600 hover:text-indigo-500"
+                onClick={handleToogle}
+              >
+                click me
+              </a>
+            </>
+          ) : (
+            <>
+              <span>Have an account?</span>
+              <a
+                href="#"
+                className="font-semibold text-2xl italic leading-6 text-indigo-600 hover:text-indigo-500"
+                onClick={handleToogle}
+              >
+                click me
+              </a>
+            </>
+          )}
         </p>
       </div>
     </div>
