@@ -8,7 +8,12 @@ const RecipeListItem = (props) => {
   return (
     <div className="recipe-list-item">
       <div className="profile-pic">
-        <img src={photo_link} alt="Recipe" />
+        <ImageWithFavoriteIcon
+          imageUrl={photo_link}
+          isfavorite={favorite[id]}
+          onClick={() => handleFavorite(id)}
+        />
+        {/* <img src={photo_link}/> */}
       </div>
       <div className="profile-info">
         <div className="recipe-title">
@@ -17,10 +22,11 @@ const RecipeListItem = (props) => {
           </p>
         </div>
         <p>Time: {time} minutes</p>
-        {/* Add your additional information here */}
+        <p>Est Budget: ${budget}</p>
         <p>Cuisine: {cuisine}</p>
         <span className="description">Description: {description}</span>
       </div>
+      <div></div>
     </div>
   );
 };
