@@ -1,11 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+
 import { useReducer } from "react";
+
+import { useState } from "react";
+
 import Home from "../src/pages/Home";
 import NavBar from "./components/NavBar";
 import Recipes from "../src/pages/Recipes";
 import Login from "./pages/Login";
 import useRecipes from "./hooks/useRecipes";
+import useTopRecipes from "./hooks/useTopRecipes";
+import useTopThreeRecipes from "./hooks/useTopThreeRecipes";
 import useCuisines from "./hooks/useCuisines";
 import dataReducer, { MODAL } from "./reducers/dataReducer";
 import Modal from "react-modal";
@@ -35,6 +41,17 @@ function App() {
   const { cuisines } = useCuisines();
   const closeModal = () => {
     dispatch({ type: MODAL });
+
+  const { topRecipes  } = useTopRecipes();
+  const { topThreeRecipes } = useTopThreeRecipes()
+  const { recipes } = useRecipes();
+  const { cuisines } = useCuisines();
+  const [favorite, setFavorite] = useState({});
+  const handleFavorite = (recipeId) => {
+    setFavorite((prevFavorite) => ({
+      ...prevFavorite,
+      [recipeId]: !prevFavorite[recipeId],
+    }));
   };
 
   const openModal = () => {
@@ -45,8 +62,12 @@ function App() {
       <Router>
         <NavBar cuisines={cuisines} openModal={openModal} />
         <Routes>
+
           <Route path="/" element={<Home />} />
           <Route path="/recipes" element={<Recipes recipes={recipes} />} />
+
+          <Route path="/" element={<Home topRecipes={topRecipes} topThreeRecipes={topThreeRecipes} favorite={favorite} handleFavorite={handleFavorite}/>} />
+          <Route path="/recipes" element={<Recipes recipes={recipes} favorite={favorite} handleFavorite={handleFavorite}/>} />
         </Routes>
         <Modal
           isOpen={state.isModalOpen}
