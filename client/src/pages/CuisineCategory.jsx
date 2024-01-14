@@ -5,8 +5,8 @@ import "../../public/css/recipe.css"
 import { useParams } from 'react-router-dom';
 
 function CuisineCategory({ favorite, handleFavorite }) {
-  const { id } = useParams();
-  
+  let { id } = useParams();
+  id = id.toLowerCase();
   const { cuisineCategory } = useCuisineCategory(id);
   console.log(cuisineCategory)
   return (
