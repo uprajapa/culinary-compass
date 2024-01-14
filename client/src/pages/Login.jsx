@@ -13,7 +13,7 @@ const Login = ({ closeModalLogin }) => {
     error,
     messageError,
     newUser,
-  } = useLogin();
+  } = useLogin({ closeModalLogin });
 
   const handleToogle = () => {
     setIsLogin(!isLogin);
@@ -26,10 +26,6 @@ const Login = ({ closeModalLogin }) => {
       await login();
     } else {
       await newUser();
-    }
-    console.log(error);
-    if (!error) {
-      closeModalLogin();
     }
   };
   return (
