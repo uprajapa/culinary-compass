@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const base_url = import.meta.env.VITE_API_URL;
-const useLogin = () => {
+const useLogin = ({ closeModalLogin }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -37,19 +37,19 @@ const useLogin = () => {
         email,
         password,
       });
-      console.log(response.data);
+
       if (response.data.success === true) {
         await localStorage.setItem("token", response.data.token);
         await localStorage.setItem("email", response.data.email);
         setError(false);
         setMessageError("");
-        navigate("/");
+        closeModalLogin();
       }
       setError(true);
       setMessageError(response.data.message);
-    } catch (error) {
+    } catch (err) {
       setError(true);
-      setMessageError(response.data.message);
+      setMessageError(error.response.data.message);
       console.error("Login failed", error.response.data);
     }
   };
