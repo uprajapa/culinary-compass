@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import "../../public/css/recipeDetails.css"
 import useRecipe from "../hooks/useRecipe";
@@ -15,8 +15,9 @@ function Recipe() {
 
       </div>
       <div className="chef-name" htmlFor="chef-name">By Chef: {recipe.chef_name}</div>
-
-      <iframe src={recipe.video_link} title={recipe.recipe_name} allowFullScreen></iframe>
+      <div className="video">
+        <iframe src={recipe.video_link} title={recipe.recipe_name} allowFullScreen></iframe>
+      </div>
       <div className="ingredients" htmlFor="ingredients"><b>Ingredients</b>: <br></br>&emsp;{recipe.ingredients}</div>
 
       <div className="description" htmlFor="description"><b>Description</b>: {recipe.description}</div>

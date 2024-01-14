@@ -8,8 +8,8 @@ function Home({ favorite, handleFavorite, topRecipes, topThreeRecipes }) {
 
   return (
     <div className="home">
-        {topThreeRecipes.length && <FoodCarousel topThreeRecipes={topThreeRecipes}/>}
-        <RecipeList recipes={topRecipes} favorite={favorite} handleFavorite={handleFavorite}/>
+      {topThreeRecipes.length && <FoodCarousel topThreeRecipes={topThreeRecipes} />}
+      <RecipeList recipes={topRecipes} favorite={favorite} handleFavorite={handleFavorite} />
     </div>
   );
 }
