@@ -21,18 +21,19 @@ import useMexicanRecipes from "./hooks/useMexicanRecipe";
 import useItalianRecipes from "./hooks/useItalianRecipes";
 import useJapaneseRecipes from "./hooks/useJapaneseRecipes";
 import usePopularRecipes from "./hooks/usePopularRecipes";
+import CuisineCategory from "./pages/CuisineCategory";
 
 function App() {
   const { topRecipes  } = useTopRecipes();
   const { topThreeRecipes } = useTopThreeRecipes()
   const { recipes } = useRecipes();
   const { cuisines } = useCuisines();
-  const { indianRecipes } = useIndianRecipes();
-  const { koreanRecipes } = useKoreanRecipes();
-  const { mexicanRecipes } = useMexicanRecipes();
-  const { italianRecipes } = useItalianRecipes();
-  const { japaneseRecipes } = useJapaneseRecipes();
-  const { popularRecipes } = usePopularRecipes();
+  // const { indianRecipes } = useIndianRecipes();
+  // const { koreanRecipes } = useKoreanRecipes();
+  // const { mexicanRecipes } = useMexicanRecipes();
+  // const { italianRecipes } = useItalianRecipes();
+  // const { japaneseRecipes } = useJapaneseRecipes();
+  // const { popularRecipes } = usePopularRecipes();
   const [favorite, setFavorite] = useState({});
   const handleFavorite = (recipeId) => {
     setFavorite((prevFavorite) => ({
@@ -49,12 +50,13 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home topRecipes={topRecipes} topThreeRecipes={topThreeRecipes} favorite={favorite} handleFavorite={handleFavorite}/>} />
           <Route path="/recipes" element={<Recipes recipes={recipes} favorite={favorite} handleFavorite={handleFavorite}/>} />
-          <Route path="/indianrecipes" element={<IndianRecipes recipes={indianRecipes} favorite={favorite} handleFavorite={handleFavorite}/>} />
-          <Route path="/koreanrecipes" element={<KoreanRecipes recipes={koreanRecipes} favorite={favorite} handleFavorite={handleFavorite}/>} />
+          {/* <Route path="/indianrecipes" element={<IndianRecipes recipes={indianRecipes} favorite={favorite} handleFavorite={handleFavorite}/>} />
+          <Route path="/cuisines/Korean" element={<KoreanRecipes recipes={koreanRecipes} favorite={favorite} handleFavorite={handleFavorite}/>} />
           <Route path="/mexicanrecipes" element={<MexicanRecipes recipes={mexicanRecipes} favorite={favorite} handleFavorite={handleFavorite}/>} />
           <Route path="/italianrecipes" element={<ItalianRecipes recipes={italianRecipes} favorite={favorite} handleFavorite={handleFavorite}/>} />
           <Route path="/japaneserecipes" element={<JapaneseRecipes recipes={japaneseRecipes} favorite={favorite} handleFavorite={handleFavorite}/>} />
-          <Route path="/popularrecipes" element={<PopularRecipes recipes={popularRecipes} favorite={favorite} handleFavorite={handleFavorite}/>} />
+          <Route path="/cuisines/popular" element={<PopularRecipes recipes={popularRecipes} favorite={favorite} handleFavorite={handleFavorite}/>} /> */}
+          <Route path="/cuisines/:id" element={<CuisineCategory favorite={favorite} handleFavorite={handleFavorite}/>} />
         </Routes>
       </Router>
     </>

@@ -6,7 +6,7 @@ const useKoreanRecipes = () => {
     const [koreanRecipes, setKoreanRecipes] = useState([])
    
     useEffect(()=> {
-      axios.get("http://localhost:8080/api/koreanrecipes")
+      axios.get("http://localhost:8080/api/cuisines/Korean")
         .then((response) => setKoreanRecipes(response.data.recipes))
         .catch(err => console.error('Error fetching recipes', err)) 
     }, []);

@@ -33,12 +33,12 @@ app.use("/api/cuisines", cuisinesApiRoutes);
 app.use("/api/topratedrecipes", topRatedRecipesApiRoutes);
 app.use("/api/", indexApiRoutes);
 app.use("/api/topthreerecipes", topThreeRecipesApiRoutes);
-app.use("/api/italianrecipes", italianRecipesApiRoutes);
-app.use("/api/japaneserecipes", japaneseRecipesApiRoutes);
-app.use("/api/indianrecipes", indianRecipesApiRoutes);
-app.use("/api/koreanrecipes", koreanRecipesApiRoutes);
-app.use("/api/mexicanrecipes", mexicanRecipesApiRoutes);
-app.use("/api/popularrecipes", popularRecipesApiRoutes);
+app.use("/api/cuisines/Italian", italianRecipesApiRoutes);
+app.use("/api/cuisines/Japanese", japaneseRecipesApiRoutes);
+app.use("/api/cuisines/Indian", indianRecipesApiRoutes);
+app.use("/api/cuisines/Korean", koreanRecipesApiRoutes);
+app.use("/api/cuisines/Mexican", mexicanRecipesApiRoutes);
+app.use("/api/cuisines/Popular", popularRecipesApiRoutes);
 
 app.listen(PORT, HOST, () => {
   console.log(`Example app listening on port ${PORT}`);

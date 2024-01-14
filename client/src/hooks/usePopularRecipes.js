@@ -6,7 +6,7 @@ const usePopularRecipes = () => {
     const [popularRecipes, setPopularRecipes] = useState([])
    
     useEffect(()=> {
-      axios.get("http://localhost:8080/api/popularrecipes")
+      axios.get("http://localhost:8080/api/cuisines/popular")
         .then((response) => setPopularRecipes(response.data.recipes))
         .catch(err => console.error('Error fetching recipes', err)) 
     }, []);

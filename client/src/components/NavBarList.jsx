@@ -3,7 +3,7 @@ import useLogout from "../hooks/useLogout";
 
 const NavBarList = ({ cuisines }) => {
   const { logout } = useLogout();
-  const allCuisines = cuisines.map((cuisine) => <p key={cuisine.name}>{cuisine.name}</p>);
+  const allCuisines = cuisines.map((cuisine) => <p key={cuisine.name}><Link to={`cuisines/${cuisine.name}`}>{cuisine.name}</Link></p>);
 
   return (
     <ul className="navlinks">
@@ -17,7 +17,7 @@ const NavBarList = ({ cuisines }) => {
       </li>
 
       <li>
-        <Link to="/popular">Popular</Link>
+        <Link to="cuisines/Popular">Popular</Link>
       </li>
 
       <li className="searchBar">
