@@ -7,6 +7,7 @@ CREATE TABLE
     cuisine_id INTEGER REFERENCES cuisines(id) NOT NULL,
     chef_name VARCHAR(255) NOT NULL,
     recipe_name VARCHAR(255) NOT NULL,
+    budget INTEGER,
     prep_time INTEGER,
     cook_time INTEGER,
     servings INTEGER,

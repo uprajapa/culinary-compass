@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   width: 1200px;
-  height: 400px;
+  height: 420px;
   align-self: center;
   border: 3px;
   border-color: black;
@@ -17,10 +17,12 @@
 
 .profile-info {
   width: 800px;
+  margin-left: 200px;
 }
 .profile-pic {
   display: flex;
   width: 300px;
+  margin-top: 2px;
 }
 
 .recipe-title {
