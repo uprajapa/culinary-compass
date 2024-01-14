@@ -39,7 +39,7 @@ VALUES
                 'Quick and easy delicious egg fried rice',
                 '3 tbsp cooking oil, 4 eggs, beaten with pinch of salt, 4 cups cold jasmine rice, 2 tbsp soy sauce, pinch of salt, 4 sliced green onions',
                 'Instructions in video',
-                'https://www.youtube.com/watch?v=qH__o17xHls',
+                'https://youtu.be/qH__o17xHls?si=13qM1AuLrsXKxMzq',
                 'https://www.budgetbytes.com/wp-content/uploads/2012/02/Hearty-Black-Bean-Quesadillas-V3.jpg'
         ),
         (

@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 var cors = require("cors");
 const morgan = require("morgan");
+const helmet = require("helmet");
 
 const HOST = process.env.HOST || "localhost";
 const PORT = process.env.PORT || 8080;
@@ -11,6 +12,12 @@ const app = express();
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
+
+app.use(
+  helmet({
+    xFrameOptions: { action: "deny" },
+  }),
+);
 
 const verifyToken = require("./src/middleware/authMiddleware");
 

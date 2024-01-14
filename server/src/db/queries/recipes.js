@@ -42,4 +42,18 @@ const findTopThreeRecipes = async () => {
   }
 };
 
-module.exports = { findAll, findTopRatedRecipes, findTopThreeRecipes };
+const findById = async (id) => {
+  try {
+    const query = "SELECT * FROM recipes WHERE id = $1";
+    const result = await db.query(query, [id]);
+    if (result.rowCount > 0) {
+      return { success: true, recipe: result.rows[0] };
+    } else {
+      return { success: true, recipe: [] };
+    }
+  } catch (error) {
+    return { success: false, message: error };
+  }
+};
+
+module.exports = { findAll, findTopRatedRecipes, findTopThreeRecipes, findById };

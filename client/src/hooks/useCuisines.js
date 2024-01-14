@@ -26,8 +26,4 @@ const useCuisines = () => {
   return { cuisines };
 };
 
-<<<<<<< HEAD
 export default useCuisines;
-=======
-export default useCuisines;
->>>>>>> feature/navbar
