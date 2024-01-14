@@ -74,6 +74,26 @@ VALUES
                 '1. Slice the avocados in half, remove the pit and skin and place in a mixing bowl., 2. Add lime/lemon juice, mash the avocado with a fork or with a potato masher and make it as chunky or smooth as you like. Add chopped chili/ jalapeño, chopped onion, chopped cilantro, chopped tomato and salt. Stir until well combined., 3. Taste and season with extra salt or lemon juice., 4. Serve with tortilla chips.',
                 'https://www.youtube.com/watch?v=K06J2pFY6yU',
                 'https://images.pexels.com/photos/4562973/pexels-photo-4562973.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+        ),
+        (
+                01,
+                05,
+                'The Cooking Foodie',
+                'Quick and Easy Chicken Curry',
+                14,
+                10,
+                25,
+                04,
+                'This is not traditional chicken curry recipe but the easiest way and it so delicious!',
+                '900g (2 pounds) chicken breast, cut into cubes, 2 onions, 3 garlic cloves, 1 tablespoon grated ginger, 3 tablespoons vegetable oil, 2 tablespoon curry powder, 1.5 teaspoons salt, 1/2 teaspoon black pepper, 4 large tomatoes, chopped, 1 can (400g/14oz) coconut cream/milk, ½ teaspoon garam masala (optional), Coriander, chopped – for garnish',
+                '1. In a large pan heat oil. Add chopped onions and sauté until golden, over medium-low heat. stir occasionally., 2. When onions are golden add grated garlic and ginger. Stir and cook for 2 minutes. Add chopped tomatoes and cook, stirring occasionally, until soft. Add curry powder and cook, stirring, for 2 minutes. Add chicken breast, season with salt and pepper, cook for 5 minutes, until golden. Cover the pan and cook for 2-3 minutes more. Add water, cover and cook 10 minutes., 3. Add coconut milk/cream, season with garam masala and salt, stir, and cook until lightly thickens.',
+                'https://www.youtube.com/watch?v=WRYOVVexMhU',
+                'https://images.pexels.com/photos/9218754/pexels-photo-9218754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+
         );
 
+-- Easy Egg Fried Rice picture credit: Trista Chen from https://www.pexels.com/photo/cooked-rice-on-black-ceramic-plate-723198/
+-- Indian Curry picture credit: Lucas Andrade from https://www.pexels.com/photo/curry-meal-with-garnish-19781596/
+-- Guacamole picture credit: Pierre-Antoine Caisso from https://www.pexels.com/photo/a-person-dipping-nacho-chips-in-guacamole-4562973/
+-- Quick and Easy Chicken Curry picture credit: Loren Castillo from https://www.pexels.com/photo/cooked-food-on-gray-ceramic-plate-9218754/
 --  https://www.budgetbytes.com/hearty-black-bean-quesadillas/
