@@ -9,6 +9,7 @@ import KoreanRecipes from "./pages/koreanRecipes";
 import MexicanRecipes from "./pages/mexicanRecipes";
 import ItalianRecipes from "./pages/italianRecipes";
 import JapaneseRecipes from "./pages/japaneseRecipes";
+import PopularRecipes from "./pages/PopularRecipes";
 import Login from "./pages/Login";
 import useRecipes from "./hooks/useRecipes";
 import useTopRecipes from "./hooks/useTopRecipes";
@@ -19,6 +20,7 @@ import useKoreanRecipes from "./hooks/useKoreanRecipes";
 import useMexicanRecipes from "./hooks/useMexicanRecipe";
 import useItalianRecipes from "./hooks/useItalianRecipes";
 import useJapaneseRecipes from "./hooks/useJapaneseRecipes";
+import usePopularRecipes from "./hooks/usePopularRecipes";
 
 function App() {
   const { topRecipes  } = useTopRecipes();
@@ -30,6 +32,7 @@ function App() {
   const { mexicanRecipes } = useMexicanRecipes();
   const { italianRecipes } = useItalianRecipes();
   const { japaneseRecipes } = useJapaneseRecipes();
+  const { popularRecipes } = usePopularRecipes();
   const [favorite, setFavorite] = useState({});
   const handleFavorite = (recipeId) => {
     setFavorite((prevFavorite) => ({
@@ -51,6 +54,7 @@ function App() {
           <Route path="/mexicanrecipes" element={<MexicanRecipes recipes={mexicanRecipes} favorite={favorite} handleFavorite={handleFavorite}/>} />
           <Route path="/italianrecipes" element={<ItalianRecipes recipes={italianRecipes} favorite={favorite} handleFavorite={handleFavorite}/>} />
           <Route path="/japaneserecipes" element={<JapaneseRecipes recipes={japaneseRecipes} favorite={favorite} handleFavorite={handleFavorite}/>} />
+          <Route path="/popularrecipes" element={<PopularRecipes recipes={popularRecipes} favorite={favorite} handleFavorite={handleFavorite}/>} />
         </Routes>
       </Router>
     </>
