@@ -1,9 +1,19 @@
 import React from "react";
 import "../../public/css/RecipeListItem.css";
-
+import ImageWithFavoriteIcon from "./ImageWithFavoriteIcon";
 const RecipeListItem = (props) => {
-  const { recipe_name, chef_name, time, cuisine, description, photo_link } =
-    props;
+  const {
+    recipe_name,
+    chef_name,
+    budget,
+    time,
+    cuisine,
+    description,
+    photo_link,
+    id,
+    favorite,
+    handleFavorite,
+  } = props;
 
   return (
     <div className="recipe-list-item">
