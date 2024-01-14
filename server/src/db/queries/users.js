@@ -38,6 +38,7 @@ const createUser = async (email, password) => {
     const query =
       "INSERT INTO users (email,password) VALUES ($1,$2) RETURNING id";
     const result = await db.query(query, [email, passwordHashed]);
+
     if (result.rowCount === 1) {
       const token = jwt.sign(
         { userId: result.rows[0].id },
@@ -49,7 +50,12 @@ const createUser = async (email, password) => {
       return { success: true, token, email };
     }
   } catch (error) {
-    return { success: false, message: error.message };
+    if (error.constraint === "users_email_key") {
+      const msg = "Email address is already in use.";
+      return { success: false, message: msg };
+    } else {
+      return { success: false, message: error.message };
+    }
   }
 };
 

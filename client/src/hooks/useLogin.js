@@ -15,7 +15,7 @@ const useLogin = () => {
         email,
         password,
       });
-      if (response.status === 200 && response.data.success) {
+      if (response.data.success === true) {
         await localStorage.setItem("token", response.data.token);
         await localStorage.setItem("email", response.data.email);
         setError(false);
@@ -37,8 +37,8 @@ const useLogin = () => {
         email,
         password,
       });
-
-      if (response.status === 200 && response.data.success) {
+      console.log(response.data);
+      if (response.data.success === true) {
         await localStorage.setItem("token", response.data.token);
         await localStorage.setItem("email", response.data.email);
         setError(false);

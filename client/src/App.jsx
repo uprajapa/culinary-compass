@@ -15,7 +15,7 @@ import useRecipes from "./hooks/useRecipes";
 import useTopRecipes from "./hooks/useTopRecipes";
 import useTopThreeRecipes from "./hooks/useTopThreeRecipes";
 import useCuisines from "./hooks/useCuisines";
-import dataReducer, { MODAL } from "./reducers/dataReducer";
+import dataReducer, { MODAL_LOGIN } from "./reducers/dataReducer";
 
 const customStyles = {
   overlay: {
@@ -38,7 +38,7 @@ Modal.setAppElement("#root");
 
 function App() {
   const [state, dispatch] = useReducer(dataReducer, {
-    isModalOpen: false,
+    isModalOpenLogin: false,
   });
 
   const { recipes } = useRecipes();
@@ -54,18 +54,18 @@ function App() {
     }));
   };
 
-  const closeModal = () => {
-    dispatch({ type: MODAL });
+  const closeModalLogin = () => {
+    dispatch({ type: MODAL_LOGIN });
   };
 
-  const openModal = () => {
-    dispatch({ type: MODAL });
+  const openModalLogin = () => {
+    dispatch({ type: MODAL_LOGIN });
   };
 
   return (
     <>
       <Router>
-        <NavBar cuisines={cuisines} openModal={openModal} />
+        <NavBar cuisines={cuisines} openModalLogin={openModalLogin} />
         <Routes>
           <Route
             path="/"
@@ -90,16 +90,16 @@ function App() {
           />
         </Routes>
         <Modal
-          isOpen={state.isModalOpen}
-          onRequestClose={closeModal}
+          isOpen={state.isModalOpenLogin}
+          onRequestClose={closeModalLogin}
           contentLabel="Login Modal"
           style={customStyles}
         >
           <MdClose
-            onClick={closeModal}
+            onClick={closeModalLogin}
             className="text-red-500 text-4xl bold cursor-pointer"
           />
-          <Login closeModal={closeModal} />
+          <Login closeModalLogin={closeModalLogin} />
         </Modal>
       </Router>
     </>

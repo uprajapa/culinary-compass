@@ -2,7 +2,7 @@ import { useState } from "react";
 import ErrorMessage from "../components/ErrorMessage";
 import useLogin from "../hooks/useLogin";
 
-const Login = ({ closeModal }) => {
+const Login = ({ closeModalLogin }) => {
   const [isLogin, setIsLogin] = useState(true);
   const {
     email,
@@ -19,15 +19,18 @@ const Login = ({ closeModal }) => {
     setIsLogin(!isLogin);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (isLogin) {
-      login();
+      await login();
     } else {
-      newUser();
+      await newUser();
     }
-    login();
-    closeModal();
+    console.log(error);
+    if (!error) {
+      closeModalLogin();
+    }
   };
   return (
     <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
@@ -95,7 +98,7 @@ const Login = ({ closeModal }) => {
               onClick={handleSubmit}
               className="flex w-full justify-center rounded-md bg-indigo-600 px-4 py-4 text-2xl font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Submit
+              {isLogin ? <span>Login</span> : <span>Create</span>}
             </button>
           </div>
         </form>
