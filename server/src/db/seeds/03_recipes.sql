@@ -77,7 +77,7 @@ VALUES
         ),
         (
                 01,
-                05,
+                03,
                 'The Cooking Foodie',
                 'Quick and Easy Chicken Curry',
                 14,
