@@ -227,7 +227,7 @@ VALUES
                 '150 g coffee, 65 g granulated sugar, 3 medium eggs very fresh, 380 g mascarpone cheese, 130 g ladyfingers Savoiardi biscuits, Unsweetened cocoa powder for decoration',
                 '1. Prepare the espresso coffee or moka coffee, then sweeten it to taste (I prefer it unsweetened) and let it cool in a small wide bowl., 2. Carefully separate the egg whites from the yolks, remembering that for well-beaten egg whites, there should be no trace of the yolk., 3. In a large bowl, whip the egg yolks with a mixer, adding only half the sugar, until light and smooth., 4. With the mixer still running, add the mascarpone cheese, little by little., 5. Clean the mixer attachments well and whisk the egg whites in another bowl, gradually adding the remaining sugar. Whip them until stiff., 6. Take a spoonful of egg whites and pour them into the bowl of mascarpone cream. Mix gently with a spatula, from bottom to top, 7. Continue adding the rest of the egg whites, gradually stirring gently from bottom to top. Mascarpone cream is ready., 8. Add a generous spoonful of mascarpone cream onto the bottom of a glass or ceramic baking dish or casserole, measuring approximately 30 x 20 x 5 cm. Spread it evenly., 9. Dip the ladyfingers for 1 or 2 seconds on each side into the coffee. Let them rest for 5 minutes, then arrange them in the casserole, on top of the mascarpone cream., 10. Add a layer of mascarpone cream, using half of the remaining cream., 11. Add another layer of ladyfingers, then spread the mascarpone cream generously., 12. Using a toothpick, create patterns on the surface of the tiramisu. I like to make small waves, 13. Sprinkle with unsweetened cocoa powder., 14. Cover the tiramisu and chill in the fridge for at least 2 hours. Your Tiramisu is ready to serve.',
                 'https://www.youtube.com/watch?v=F3DFTIkL6CM',
-                'https://stock.adobe.com/ca/images/plate-of-tiramisu-cake-isolated-on-white/272543918'
+                'https://images.pexels.com/photos/6880219/pexels-photo-6880219.jpeg?auto=compress&cs=tinysrgb&w=800'
         ),
         (
                 01,
@@ -257,7 +257,7 @@ VALUES
 -- Ground Beef Tacos picture credit: Timolina from https://www.freepik.com/free-photo/mexican-tacos-with-beef-tomato-sauce-salsa_7122341.htm#query=beef%20tacos&position=1&from_view=keyword&track=ais&uuid=351fa2d2-1262-41ac-8a09-41f9746c44d0
 -- Spaghetti With Homemade Meat Sauce picture credit: Monika1607 from https://pixabay.com/photos/spaghetti-bolognese-italian-court-4546233/
 -- Creamy Tuscan Chicken picture credit: Nickey from https://www.kitchensanctuary.com/tuscan-chicken/
--- Classic Tiramisu picture credit: New Africa from https://stock.adobe.com/ca/search?k=tiramisu&asset_id=272543918
+-- Classic Tiramisu picture credit: Min Che from https://www.pexels.com/photo/close-up-shot-of-a-sliced-cake-6880219/
 -- Creamy Chicken Pesto Past picture credit: Diana https://littlesunnykitchen.com/creamy-chicken-pesto-pasta/
 --  https://www.budgetbytes.com/hearty-black-bean-quesadillas/
 
