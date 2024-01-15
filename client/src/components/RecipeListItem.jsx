@@ -1,6 +1,7 @@
 import React from "react";
 import "../../public/css/RecipeListItem.css";
 import ImageWithFavoriteIcon from "./ImageWithFavoriteIcon";
+import { Link } from "react-router-dom";
 const RecipeListItem = (props) => {
   const {
     recipe_name,
@@ -26,6 +27,7 @@ const RecipeListItem = (props) => {
         {/* <img src={photo_link}/> */}
       </div>
       <div className="profile-info">
+      <Link to ={`/recipes/${id}`} reloadDocument>
         <div className="recipe-title">
           <p>
             {recipe_name} by {chef_name}
@@ -35,7 +37,9 @@ const RecipeListItem = (props) => {
         <p>Est Budget: ${budget}</p>
         <p>Cuisine: {cuisine}</p>
         <span className="description">Description: {description}</span>
+      </Link>
       </div>
+      
     </div>
   );
 };
