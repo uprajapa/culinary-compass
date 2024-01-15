@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar";
 import Recipes from "../src/pages/Recipes";
 import Recipe from "./pages/recipe";
 import Login from "./pages/Login";
+import CuisineCategory from "./pages/CuisineCategory";
 import useRecipes from "./hooks/useRecipes";
 import useTopRecipes from "./hooks/useTopRecipes";
 import useTopThreeRecipes from "./hooks/useTopThreeRecipes";
