@@ -15,6 +15,7 @@ import useTopRecipes from "./hooks/useTopRecipes";
 import useTopThreeRecipes from "./hooks/useTopThreeRecipes";
 import useCuisines from "./hooks/useCuisines";
 import dataReducer, { MODAL_LOGIN } from "./reducers/dataReducer";
+import MyRecipes from "./pages/MyRecipes";
 
 const customStyles = {
   overlay: {
@@ -90,6 +91,7 @@ function App() {
           />
           <Route path="/recipes/:id" element={<Recipe />} />
           <Route path="/cuisines/:id" element={<CuisineCategory favorite={favorite} handleFavorite={handleFavorite}/>} />
+          <Route path="/myrecipes" element={<MyRecipes />} />
         </Routes>
         <Modal
           isOpen={state.isModalOpenLogin}
