@@ -1,15 +1,13 @@
-import React from "react";
+import { React, useReducer, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Modal from "react-modal";
 import { MdClose } from "react-icons/md";
 import "./App.css";
 
-import { useReducer } from "react";
-import { useState } from "react";
-
 import Home from "../src/pages/Home";
 import NavBar from "./components/NavBar";
 import Recipes from "../src/pages/Recipes";
+import Recipe from "./pages/recipe";
 import Login from "./pages/Login";
 import useRecipes from "./hooks/useRecipes";
 import useTopRecipes from "./hooks/useTopRecipes";
@@ -47,6 +45,7 @@ function App() {
   const { topThreeRecipes } = useTopThreeRecipes();
 
   const [favorite, setFavorite] = useState({});
+
   const handleFavorite = (recipeId) => {
     setFavorite((prevFavorite) => ({
       ...prevFavorite,
@@ -88,6 +87,7 @@ function App() {
               />
             }
           />
+          <Route path="/recipes/:id" element={<Recipe />} />
         </Routes>
         <Modal
           isOpen={state.isModalOpenLogin}

@@ -36,9 +36,7 @@ const RecipeListItem = (props) => {
         <p>Cuisine: {cuisine}</p>
         <span className="description">Description: {description}</span>
       </div>
-      <div></div>
     </div>
   );
 };
-
 export default RecipeListItem;
