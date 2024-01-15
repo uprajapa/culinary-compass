@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import "../../public/css/myrecipes.css"
 function MyRecipes() {
-  const testRecipe = [
+  const testRecipes = [
               {name: "Mexican Inspired Healthy One Pot Black Bean"}, 
               {name: "Indian Style Potato Vegetable Wrap"}, 
               {name: "Quick and Easy Chicken Curry"}
             ]
-  const [userRecipes, setUserRecipes] = useState(testRecipe);
+  const [userRecipes, setUserRecipes] = useState(testRecipes);
 
   
   return(
@@ -15,7 +15,7 @@ function MyRecipes() {
       <table className="table">
         <tbody> 
           <tr>
-            <td>Recipe</td>
+            <td>Recipes</td>
             <td>Edit Recipe </td>
             <td>Delete Recipe</td>
           </tr>
