@@ -9,12 +9,14 @@ import NavBar from "./components/NavBar";
 import Recipes from "../src/pages/Recipes";
 import Recipe from "./pages/recipe";
 import Login from "./pages/Login";
+import CuisineCategory from "./pages/CuisineCategory";
 import useRecipes from "./hooks/useRecipes";
 import useTopRecipes from "./hooks/useTopRecipes";
 import useTopThreeRecipes from "./hooks/useTopThreeRecipes";
 import useCuisines from "./hooks/useCuisines";
 import dataReducer, { MODAL_LOGIN } from "./reducers/dataReducer";
 import FavoriteRecipes from "./pages/FavoriteRecipes";
+import MyRecipes from "./pages/MyRecipes";
 
 const customStyles = {
   overlay: {
@@ -101,6 +103,8 @@ function App() {
             />
           }
           <Route path="/recipes/:id" element={<Recipe />} />
+          <Route path="/cuisines/:id" element={<CuisineCategory favorite={favorite} handleFavorite={handleFavorite} />} />
+          <Route path="/myrecipes" element={<MyRecipes />} />
         </Routes>
         <Modal
           isOpen={state.isModalOpenLogin}
