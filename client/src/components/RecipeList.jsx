@@ -1,13 +1,12 @@
 import React from 'react';
 import RecipeListItem from './RecipeListItem';
-import { Link } from "react-router-dom";
+
 
 const RecipeList = (props) => {
 
   const { recipes, favorite, handleFavorite } = props;
   
   const recipeListArray = recipes.map((recipe)=>
-  <Link to ={`/recipes/${recipe.id}`} reloadDocument>
     <RecipeListItem 
     key={recipe.id}
     id={recipe.id}
@@ -21,7 +20,6 @@ const RecipeList = (props) => {
     favorite={favorite}
     handleFavorite={handleFavorite}
     />
-  </Link>
   );
   return(
     <ul>
