@@ -58,7 +58,7 @@ const findById = async (id) => {
 
 const findItalianRecipes = async () => {
   try {
-    const query = "SELECT *, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Italian';";
+    const query = "SELECT *, recipes.id, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Italian';";
     const result = await db.query(query);
     if (result.rowCount > 0) {
       console.log(result.rows);
@@ -72,7 +72,7 @@ const findItalianRecipes = async () => {
 };
 const findJapaneseRecipes = async () => {
   try {
-    const query = "SELECT *, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Japanese';";
+    const query = "SELECT *, recipes.id, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Japanese';";
     const result = await db.query(query);
     if (result.rowCount > 0) {
       console.log(result.rows);
@@ -86,7 +86,7 @@ const findJapaneseRecipes = async () => {
 };
 const findIndianRecipes = async () => {
   try {
-    const query = "SELECT *, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Indian';";
+    const query = "SELECT *, recipes.id, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Indian';";
     const result = await db.query(query);
     if (result.rowCount > 0) {
       console.log(result.rows);
@@ -100,7 +100,7 @@ const findIndianRecipes = async () => {
 };
 const findKoreanRecipes = async () => {
   try {
-    const query = "SELECT *, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Korean';";
+    const query = "SELECT *, recipes.id, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Korean';";
     const result = await db.query(query);
     if (result.rowCount > 0) {
       console.log(result.rows);
@@ -114,7 +114,7 @@ const findKoreanRecipes = async () => {
 };
 const findMexicanRecipes = async () => {
   try {
-    const query = "SELECT *, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Mexican';";
+    const query = "SELECT *, recipes.id, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Mexican';";
     const result = await db.query(query);
     if (result.rowCount > 0) {
       console.log(result.rows);
