@@ -26,4 +26,16 @@ router.post("/createUser", (req, res) => {
     });
 });
 
+router.get("/:email", (req, res) => {
+  const { email } = req.params;
+  userQueries
+    .getUserByEmail(email)
+    .then((user) => {
+      res.status(200).json(user);
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
+});
+
 module.exports = router;

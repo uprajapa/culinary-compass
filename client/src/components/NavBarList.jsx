@@ -27,19 +27,30 @@ const NavBarList = ({ cuisines, openModalLogin }) => {
         </button>
       </li>
 
-      {localStorage.getItem("email") !== "null" ? (
-        <li>{localStorage.getItem("email")}</li>
+      {localStorage.getItem("email") ? (
+        <li>
+          <div className="profile-dropdown">
+            {localStorage.getItem("email")}
+            <div className="profile-dropdown-content">
+              <p><Link to="/favorite-recipes">Favorites</Link></p>
+              <p><Link to="/my-recipes">My recipes</Link></p>
+              <p><button onClick={logout}>Logout</button></p>
+            </div>
+          </div>
+        </li>
       ) : (
-        <li></li>
+        <li>
+          <button onClick={openModalLogin}>Login</button>
+        </li>
       )}
 
-      <li>
+      {/* <li>
         {localStorage.getItem("token") ? (
           <button onClick={logout}>Logout</button>
         ) : (
           <button onClick={openModalLogin}>Login</button>
         )}
-      </li>
+      </li> */}
     </ul>
   );
 };

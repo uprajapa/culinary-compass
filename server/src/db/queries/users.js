@@ -59,4 +59,18 @@ const createUser = async (email, password) => {
   }
 };
 
-module.exports = { auth, createUser };
+
+const getUserByEmail = async (email) => {
+  try {
+    const query = "SELECT id FROM users WHERE email = $1";
+    const result = await db.query(query, [email]);
+    if (result.rowCount > 0) {
+      return { success: true, user: result.rows[0] };
+    } else {
+      return { success: true, user: [] };
+    }
+  } catch (error) {
+    return { success: false, message: error };
+  }
+};
+module.exports = { auth, createUser, getUserByEmail };

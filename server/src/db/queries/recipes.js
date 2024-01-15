@@ -44,7 +44,7 @@ const findTopThreeRecipes = async () => {
 
 const findById = async (id) => {
   try {
-    const query = "SELECT * FROM recipes WHERE id = $1";
+    const query = "SELECT recipes.*, cuisines.name As cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE recipes.id = $1";
     const result = await db.query(query, [id]);
     if (result.rowCount > 0) {
       return { success: true, recipe: result.rows[0] };
@@ -56,4 +56,19 @@ const findById = async (id) => {
   }
 };
 
-module.exports = { findAll, findTopRatedRecipes, findTopThreeRecipes, findById };
+const favoriteRecipes = async (id) => {
+  try {
+    const query = "SELECT recipe_id FROM favorites WHERE user_id = $1;";
+    const result = await db.query(query, [id]);
+    if (result.rowCount > 0) {
+      return { success: true, favoriteRecipes: result.rows };
+    } else {
+      return { success: true, favoriteRecipes: [] };
+    }
+  } catch (error) {
+    return { success: false, Error: error };
+  }
+};
+
+
+module.exports = { findAll, findTopRatedRecipes, findTopThreeRecipes, findById, favoriteRecipes };

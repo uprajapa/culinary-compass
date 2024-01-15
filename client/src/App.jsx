@@ -14,6 +14,7 @@ import useTopRecipes from "./hooks/useTopRecipes";
 import useTopThreeRecipes from "./hooks/useTopThreeRecipes";
 import useCuisines from "./hooks/useCuisines";
 import dataReducer, { MODAL_LOGIN } from "./reducers/dataReducer";
+import FavoriteRecipes from "./pages/FavoriteRecipes";
 
 const customStyles = {
   overlay: {
@@ -35,6 +36,7 @@ const customStyles = {
 Modal.setAppElement("#root");
 
 function App() {
+
   const [state, dispatch] = useReducer(dataReducer, {
     isModalOpenLogin: false,
   });
@@ -87,6 +89,17 @@ function App() {
               />
             }
           />
+          {localStorage.getItem("email") &&
+            <Route
+              path="/favorite-recipes"
+              element={
+                <FavoriteRecipes
+                  favorite={favorite}
+                  handleFavorite={handleFavorite}
+                />
+              }
+            />
+          }
           <Route path="/recipes/:id" element={<Recipe />} />
         </Routes>
         <Modal
