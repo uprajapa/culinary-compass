@@ -1,4 +1,4 @@
-import { React, useReducer, useState } from "react";
+import { React, useReducer, useState, useSyncExternalStore } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Modal from "react-modal";
 import { MdClose } from "react-icons/md";
@@ -21,6 +21,8 @@ import useCuisines from "./hooks/useCuisines";
 import useFavoriteRecipes from "./hooks/useFavoriteRecipes";
 
 import dataReducer, { MODAL_LOGIN } from "./reducers/dataReducer";
+import useAddFavorites from "./hooks/useAddFavorites";
+import useDeleteFavorites from "./hooks/useDeleteFavorites";
 
 const customStyles = {
   overlay: {
@@ -42,7 +44,7 @@ const customStyles = {
 Modal.setAppElement("#root");
 
 function App() {
-
+  const [loader, setLoader] = useState(false);
   const [state, dispatch] = useReducer(dataReducer, {
     isModalOpenLogin: false,
   });
@@ -51,13 +53,21 @@ function App() {
   const { cuisines } = useCuisines();
   const { topRecipes } = useTopRecipes();
   const { topThreeRecipes } = useTopThreeRecipes();
-  const { favoriteRecipes } = useFavoriteRecipes();
-  const favoriteRecipesIds = favoriteIds();
+  let { favoriteRecipes } = useFavoriteRecipes(recipes);
+  let favoriteRecipesIds = favoriteIds(favoriteRecipes);
+  console.log(`Fav Ids:`, favoriteRecipesIds);
 
   const [favorite, setFavorite] = useState(false);
 
-  const handleFavorite = (recipeId) => {
-    setFavorite(!favorite);
+  const handleFavorite = async (recipeId, isFavorite) => {
+    console.log(`Favorite:`, isFavorite);
+    if (isFavorite) {
+      useDeleteFavorites(recipeId);
+    } else {
+      useAddFavorites(recipeId);
+    }
+    favoriteRecipesIds = favoriteIds(favoriteRecipes);
+    console.log(favoriteRecipesIds);
   };
 
   const closeModalLogin = () => {
@@ -103,6 +113,7 @@ function App() {
                 <FavoriteRecipes
                   favoriteRecipes={favoriteRecipes}
                   favorite={favorite}
+                  favoriteRecipesIds={favoriteRecipesIds}
                   handleFavorite={handleFavorite}
                 />
               }

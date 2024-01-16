@@ -4,7 +4,7 @@ import axios from "axios";
 
 const base_url = import.meta.env.VITE_API_URL;
 
-const useFavoriteRecipes = () => {
+const useFavoriteRecipes = (recipes) => {
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const useFavoriteRecipes = () => {
   }, [])
 
   const getFavoriteRecipes = async () => {
-    let recipes = [];
+    // let recipes = [];
     let result = {};
     const email = localStorage.getItem("email");
     try {
@@ -22,15 +22,16 @@ const useFavoriteRecipes = () => {
       if (response.status === 200) {
         const data = response.data.favoriteRecipes;
         data.map(async (recipe) => {
-          const newRecipeData = await axios.get(`${base_url}/api/recipes/${recipe.recipe_id}`);
-          const newRecipe = newRecipeData.data.recipe;
+          console.log(recipe, recipes);
+          const newRecipeData = recipes.find((item) => item.id == recipe.recipe_id)
+          console.log(newRecipeData);
+          // const newRecipe = newRecipeData.data.recipe;
+          // recipes.push(newRecipe);
 
-          recipes.push(newRecipe);
+          result = { ...result, newRecipeData };
 
-          result = { ...result, recipes };
-
-          setFavoriteRecipes(result['recipes']);
         })
+        setFavoriteRecipes(result['recipes']);
       }
     } catch (err) {
       console.error("Error fetching cuisines:", err);

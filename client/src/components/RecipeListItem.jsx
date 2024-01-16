@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import "../../public/css/RecipeListItem.css";
 import ImageWithFavoriteIcon from "./ImageWithFavoriteIcon";
 import { Link } from "react-router-dom";
@@ -20,13 +20,22 @@ const RecipeListItem = (props) => {
   } = props;
 
 
+
+  let isFavorite = false;
+  useEffect(() => {
+    isFavorite = favoriteRecipesIds?.includes(id)
+    // console.log(isFavorite);
+    // console.log(`Fav Recipe Ids: ${favoriteRecipesIds}, Recipe Id: ${id}`);
+  }, [favoriteRecipesIds])
+
+
   return (
     <div className="recipe-list-item">
       <div className="profile-pic">
         <ImageWithFavoriteIcon
           imageUrl={photo_link}
-          isfavorite={favoriteRecipesIds.includes(id)}
-          onClick={() => handleFavorite(id)}
+          isfavorite={isFavorite}
+          onClick={() => handleFavorite(id, isFavorite)}
         />
         {/* <img src={photo_link}/> */}
       </div>

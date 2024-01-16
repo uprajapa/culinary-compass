@@ -7,10 +7,10 @@ const RecipeList = (props) => {
   const { recipes, favorite, handleFavorite, favoriteRecipesIds } = props;
 
 
-  const recipeListArray = recipes.map((recipe) =>
-    <li>
+  const recipeListArray = recipes.map((recipe, index) =>
+    <li key={index}>
       <RecipeListItem
-        key={recipe.id}
+
         id={recipe.id}
         recipe_name={recipe.recipe_name}
         chef_name={recipe.chef_name}
