@@ -1,11 +1,9 @@
 import React from 'react';
 import RecipeList from '../components/RecipeList';
 import { Link } from 'react-router-dom';
-import useFavoriteRecipes from "../hooks/useFavoriteRecipes";
 
 
-function FavoriteRecipes({ favorite, handleFavorite }) {
-  const { favoriteRecipes } = useFavoriteRecipes();
+function FavoriteRecipes({ favoriteRecipes, favorite, handleFavorite }) {
   const email = localStorage.getItem("email");
   if (!email) {
     return (
@@ -14,11 +12,10 @@ function FavoriteRecipes({ favorite, handleFavorite }) {
       </>
     )
   }
-
   return (
     <div className="recipe">
       <h1 className="title">My Favorite Recipes</h1>
-      <RecipeList recipes={favoriteRecipes} favorite={favorite} handleFavorite={handleFavorite} />
+      <RecipeList recipes={favoriteRecipes} favoriteRecipes={favoriteRecipes} favorite={favorite} handleFavorite={handleFavorite} />
     </div>
   );
 }

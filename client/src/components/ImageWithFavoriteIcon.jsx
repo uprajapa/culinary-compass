@@ -1,6 +1,7 @@
 import React from "react";
 import { MdOutlineFavorite } from "react-icons/md";
 const ImageWithFavoriteIcon = ({ imageUrl, onClick, isfavorite }) => {
+
   return (
     <div className="relative h-[400px] w-[400px] flex-shrink-0">
       <img src={imageUrl} alt="Image" className="w-full h-full object-cover" />

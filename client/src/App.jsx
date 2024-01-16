@@ -4,19 +4,23 @@ import Modal from "react-modal";
 import { MdClose } from "react-icons/md";
 import "./App.css";
 
+import favoriteIds from "./helpers/favoriteIds";
+
 import Home from "../src/pages/Home";
 import NavBar from "./components/NavBar";
 import Recipes from "../src/pages/Recipes";
 import Recipe from "./pages/recipe";
 import Login from "./pages/Login";
+import MyRecipes from "./pages/MyRecipes";
 import CuisineCategory from "./pages/CuisineCategory";
+import FavoriteRecipes from "./pages/FavoriteRecipes";
 import useRecipes from "./hooks/useRecipes";
 import useTopRecipes from "./hooks/useTopRecipes";
 import useTopThreeRecipes from "./hooks/useTopThreeRecipes";
 import useCuisines from "./hooks/useCuisines";
+import useFavoriteRecipes from "./hooks/useFavoriteRecipes";
+
 import dataReducer, { MODAL_LOGIN } from "./reducers/dataReducer";
-import FavoriteRecipes from "./pages/FavoriteRecipes";
-import MyRecipes from "./pages/MyRecipes";
 
 const customStyles = {
   overlay: {
@@ -47,14 +51,13 @@ function App() {
   const { cuisines } = useCuisines();
   const { topRecipes } = useTopRecipes();
   const { topThreeRecipes } = useTopThreeRecipes();
+  const { favoriteRecipes } = useFavoriteRecipes();
+  const favoriteRecipesIds = favoriteIds();
 
-  const [favorite, setFavorite] = useState({});
+  const [favorite, setFavorite] = useState(false);
 
   const handleFavorite = (recipeId) => {
-    setFavorite((prevFavorite) => ({
-      ...prevFavorite,
-      [recipeId]: !prevFavorite[recipeId],
-    }));
+    setFavorite(!favorite);
   };
 
   const closeModalLogin = () => {
@@ -78,6 +81,7 @@ function App() {
                 topThreeRecipes={topThreeRecipes}
                 favorite={favorite}
                 handleFavorite={handleFavorite}
+                favoriteRecipesIds={favoriteRecipesIds}
               />
             }
           />
@@ -88,6 +92,7 @@ function App() {
                 recipes={recipes}
                 favorite={favorite}
                 handleFavorite={handleFavorite}
+                favoriteRecipesIds={favoriteRecipesIds}
               />
             }
           />
@@ -96,6 +101,7 @@ function App() {
               path="/favorite-recipes"
               element={
                 <FavoriteRecipes
+                  favoriteRecipes={favoriteRecipes}
                   favorite={favorite}
                   handleFavorite={handleFavorite}
                 />
@@ -103,7 +109,7 @@ function App() {
             />
           }
           <Route path="/recipes/:id" element={<Recipe />} />
-          <Route path="/cuisines/:id" element={<CuisineCategory favorite={favorite} handleFavorite={handleFavorite} />} />
+          <Route path="/cuisines/:id" element={<CuisineCategory favoriteRecipesIds={favoriteRecipesIds} favorite={favorite} handleFavorite={handleFavorite} />} />
           <Route path="/myrecipes" element={<MyRecipes />} />
         </Routes>
         <Modal

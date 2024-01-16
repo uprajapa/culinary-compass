@@ -2,7 +2,7 @@ const db = require("../connection");
 
 const findAll = async () => {
   try {
-    const query = "SELECT *, cuisines.name As cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id;";
+    const query = "SELECT recipes.*, cuisines.name As cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id;";
     const result = await db.query(query);
     if (result.rowCount > 0) {
       return { success: true, recipes: result.rows };
@@ -10,7 +10,7 @@ const findAll = async () => {
       return { success: true, recipes: [] };
     }
   } catch (error) {
-    return { success: false, message: "Authentication failed" };
+    return { success: false, message: error };
   }
 };
 
@@ -141,4 +141,4 @@ const findMexicanRecipes = async () => {
   }
 };
 
-module.exports = { findAll, findTopRatedRecipes, findTopThreeRecipes, findById, findItalianRecipes, findJapaneseRecipes, findIndianRecipes, findKoreanRecipes, findMexicanRecipes };
+module.exports = { findAll, findTopRatedRecipes, findTopThreeRecipes, findById, favoriteRecipes, findItalianRecipes, findJapaneseRecipes, findIndianRecipes, findKoreanRecipes, findMexicanRecipes };
