@@ -333,6 +333,21 @@ VALUES
                 '1. Peel and cut potatoes into about 1-inch cubes. Cut the carrot, peppers, and onion into big chunks., 2. In a small bowl, combine all the braising liquid ingredients except the sesame oil and seeds. Stir well., 3. In a non-stick pan (or a small pot), sauté the potatoes in cooking oil over medium heat for 4 - 5 minutes, stirring occasionally so the potatoes don`t stick to the pan., 4. Add the sauce mix and bring it to a boil over high heat. Drop the carrot pieces in. Cover, and reduce the heat to medium and cook until the potatoes are almost cooked through (about 5 to 6 minutes, depending on the type or size of potatoes). The potatoes should be firm and not mushy., 5. Stir in the green peppers and onion, and continue to boil (uncover this time) until the sauce is reduced and slightly thickened, about 3 minutes. The potatoes will continue to soak up the sauce even after being cooked. Stir in the sesame oil and sprinkle with sesame seeds.',
                 'https://www.youtube.com/watch?v=GZ5ST5XbiIo',
                 'https://www.koreanbapsang.com/wp-content/uploads/2009/11/DSC_0069-e1470616873313.jpg'
+        ),
+        (
+                01,
+                02,
+                'RecipeTin Eats',
+                'Katsu Curry',
+                15,
+                05,
+                20,
+                04,
+                'Katsu curry is a variation of Japanese curry with a Chicken Cutlet on top.',
+                '400g / 0.9lb onion sliced into 1cm / ⅜” wide pieces, 250g / 0.6lb potato cut into 1.5cm / ⅝” cubes, 100g / 3.5oz carrot sliced to 7mm / ¼” thick pieces, 1 tbsp oil, ½ packet of 230g / 0.5lb House Vermont Curry, 800ml / 1.7pt water, 4 cups cooked rice (hot), 4 Chicken Cutlets cut into 2.5cm / 1” wide strips',
+                '1. Add oil to a pot and heat over medium high heat., 2. Add onion and sauté for a few minutes or until the onion becomes translucent and edges start getting slightly burnt., 3. Add potatoes and carrots into the pot and stir for a couple of minutes or until the surface of the vegetables starts getting cooked., 4. Add water and turn the heat up to bring it to a boil. Then reduce the heat to medium low and simmer for about 7 minutes or until the vegetables are nearly cooked through, 5. Break the curry roux cake into small blocks along the lines and add them into the pot. Stir gently to blend the curry roux. 6. Reduce the heat to low, place a lid on and cook for about 10 minutes or until the curry roux is completely dissolved. Stir occasionally as the curry tends to stick to the bottom of the pot. 7. Check the consistency of the sauce. It should be like béchamel sauce. If it`s too thick, adjust with some water. If too thin, cook further without the lid. It will thicken when cooled down as well.',
+                'https://www.youtube.com/watch?v=nU7e0KUAPV0',
+                'https://japan.recipetineats.com/wp-content/uploads/2021/12/Katsu_Curry_7011b.jpg'
         );
 
 -- Easy Egg Fried Rice picture credit: Trista Chen from https://www.pexels.com/photo/cooked-rice-on-black-ceramic-plate-723198/
@@ -355,5 +370,6 @@ VALUES
 -- Gyeran Mari - Rolled Omelette picture credit: Korean Bapsang from https://www.koreanbapsang.com/gyeran-mari-korean-rolled-omelette/
 -- Dubu Jorim - Braised Tofu picture credit: Korean Bapsang from https://www.koreanbapsang.com/dubu-jorim-korean-braised-tofu/
 -- Gamja Jorim - Brasied Potatoes picture credit: Korean Bapsang from https://www.koreanbapsang.com/gamja-jorim-braised-potatoes/
+-- Katsu Curry picture credit: Yumiko from https://japan.recipetineats.com/katsu-curry-japanese-curry-rice-with-chicken-cutlet/
 --  https://www.budgetbytes.com/hearty-black-bean-quesadillas/
 
