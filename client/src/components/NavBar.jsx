@@ -2,7 +2,7 @@ import NavBarList from "./NavBarList";
 import { Link } from "react-router-dom";
 const NavBar = ({ cuisines, openModalLogin, openModalRecipe }) => {
   return (
-    <nav className="nav">
+    <nav className="nav fixed-top">
       <div className="container">
         <div className="logo">
           <Link to="/">Culinary Compass</Link>

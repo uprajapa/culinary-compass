@@ -1,22 +1,24 @@
-import React from "react";
+import { React, useReducer, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Modal from "react-modal";
 import { MdClose } from "react-icons/md";
 import "./App.css";
 
-import { useReducer } from "react";
-import { useState } from "react";
-
 import Home from "../src/pages/Home";
 import NavBar from "./components/NavBar";
 import Recipes from "../src/pages/Recipes";
+import Recipe from "./pages/Recipe";
 import Login from "./pages/Login";
+import CuisineCategory from "./pages/CuisineCategory";
 import useRecipes from "./hooks/useRecipes";
 import useTopRecipes from "./hooks/useTopRecipes";
 import useTopThreeRecipes from "./hooks/useTopThreeRecipes";
 import useCuisines from "./hooks/useCuisines";
+
 import dataReducer, { MODAL_LOGIN, MODAL_RECIPE } from "./reducers/dataReducer";
 import RecipeForm from "./components/RecipeForm";
+
+import MyRecipes from "./pages/MyRecipes";
 
 const customStylesLogin = {
   overlay: {
@@ -42,7 +44,7 @@ const customStylesRecipe = {
   },
   content: {
     width: "600px",
-    top: "50%",
+    top: "55%",
     left: "50%",
     right: "auto",
     bottom: "auto",
@@ -65,6 +67,7 @@ function App() {
   const { topRecipes } = useTopRecipes();
   const { topThreeRecipes } = useTopThreeRecipes();
   const [favorite, setFavorite] = useState({});
+
   const handleFavorite = (recipeId) => {
     setFavorite((prevFavorite) => ({
       ...prevFavorite,
@@ -118,6 +121,17 @@ function App() {
               />
             }
           />
+          <Route path="/recipes/:id" element={<Recipe />} />
+          <Route
+            path="/cuisines/:id"
+            element={
+              <CuisineCategory
+                favorite={favorite}
+                handleFavorite={handleFavorite}
+              />
+            }
+          />
+          <Route path="/myrecipes" element={<MyRecipes />} />
         </Routes>
         <Modal
           isOpen={state.isModalOpenLogin}

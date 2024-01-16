@@ -18,7 +18,7 @@ const useCuisines = () => {
         const data = response.data;
         setCuisines(data);
       }
-    } catch (error) {
+    } catch (err) {
       console.error("Error fetching cuisines:", err.response.data.error);
     }
   };

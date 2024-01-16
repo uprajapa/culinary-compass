@@ -3,9 +3,7 @@ import useLogout from "../hooks/useLogout";
 import { IoMdArrowDropdown } from "react-icons/io";
 const NavBarList = ({ cuisines, openModalLogin, openModalRecipe }) => {
   const { logout } = useLogout();
-  const allCuisines = cuisines.map((cuisine) => (
-    <p key={cuisine.name}>{cuisine.name}</p>
-  ));
+  const allCuisines = cuisines.map((cuisine) => <p key={cuisine.name}><Link to={`cuisines/${cuisine.name}`} reloadDocument>{cuisine.name}</Link></p>);
 
   const handleRecipeNew = () => {
     if (localStorage.getItem("email")) {
@@ -25,7 +23,7 @@ const NavBarList = ({ cuisines, openModalLogin, openModalRecipe }) => {
       </li>
 
       <li>
-        <Link to="/popular">Popular</Link>
+        <Link to="cuisines/Popular" reloadDocument>Popular</Link>
       </li>
 
       <li className="searchBar">
