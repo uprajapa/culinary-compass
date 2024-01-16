@@ -20,7 +20,13 @@ const auth = async (email, password) => {
             expiresIn: "1h",
           }
         );
-        return { success: true, token, email };
+        return {
+          success: true,
+          token,
+          email,
+          user_id: result.rows[0].id,
+          user_name: result.rows[0].name,
+        };
       }
     }
     return { success: false, message: "Invalid email or password" };
@@ -29,15 +35,15 @@ const auth = async (email, password) => {
   }
 };
 
-const createUser = async (email, password) => {
+const createUser = async (name, email, password) => {
   try {
     const passwordHashed = await bcrypt.hash(
       password,
       Number(process.env.SALT_ROUNDS)
     );
     const query =
-      "INSERT INTO users (email,password) VALUES ($1,$2) RETURNING id";
-    const result = await db.query(query, [email, passwordHashed]);
+      "INSERT INTO users (name, email,password) VALUES ($1,$2, $3) RETURNING id";
+    const result = await db.query(query, [name, email, passwordHashed]);
 
     if (result.rowCount === 1) {
       const token = jwt.sign(
@@ -47,7 +53,14 @@ const createUser = async (email, password) => {
           expiresIn: "1h",
         }
       );
-      return { success: true, token, email };
+
+      return {
+        success: true,
+        token,
+        email,
+        user_id: result.rows[0].id,
+        user_name: name,
+      };
     }
   } catch (error) {
     if (error.constraint === "users_email_key") {

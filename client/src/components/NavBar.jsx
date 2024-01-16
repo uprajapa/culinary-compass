@@ -1,6 +1,6 @@
 import NavBarList from "./NavBarList";
 import { Link } from "react-router-dom";
-const NavBar = ({ cuisines, openModalLogin }) => {
+const NavBar = ({ cuisines, openModalLogin, openModalRecipe }) => {
   return (
     <nav className="nav fixed-top">
       <div className="container">
@@ -8,7 +8,11 @@ const NavBar = ({ cuisines, openModalLogin }) => {
           <Link to="/">Culinary Compass</Link>
         </div>
         <div id="mainListDiv" className="main_list">
-          <NavBarList cuisines={cuisines} openModalLogin={openModalLogin} />
+          <NavBarList
+            cuisines={cuisines}
+            openModalLogin={openModalLogin}
+            openModalRecipe={openModalRecipe}
+          />
         </div>
       </div>
     </nav>

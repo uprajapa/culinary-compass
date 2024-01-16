@@ -5,6 +5,8 @@ import useLogin from "../hooks/useLogin";
 const Login = ({ closeModalLogin }) => {
   const [isLogin, setIsLogin] = useState(true);
   const {
+    name,
+    setName,
     email,
     setEmail,
     password,
@@ -44,6 +46,28 @@ const Login = ({ closeModalLogin }) => {
 
       <div className="mt-10 sm:mx-auto  sm:w-full sm:max-w-sm">
         <form className="space-y-6" action="#" method="POST">
+          {!isLogin && (
+            <div>
+              <label
+                htmlFor="name"
+                className="block text-2xl font-medium  leading-6 text-gray-900"
+              >
+                Name
+              </label>
+              <div className="mt-2">
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  value={name}
+                  autoComplete="name"
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm p-4 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-2xl"
+                />
+              </div>
+            </div>
+          )}
           <div>
             <label
               htmlFor="email"
