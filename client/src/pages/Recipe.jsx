@@ -18,14 +18,14 @@ function Recipe() {
       <div className="video">
         <iframe src={recipe.video_link} title={recipe.recipe_name} allowFullScreen></iframe>
       </div>
-      <div className="ingredients" htmlFor="ingredients"><b>Ingredients</b>: <br></br>&emsp;{recipe.ingredients}</div>
+      <div className="description" htmlFor="description"><b>Description</b>: {recipe.description}</div>
 
-      <div className="description" htmlFor="description"><b>Description</b>: {recipe.description}</div>
+      <div className="ingredients" htmlFor="ingredients"><b>Ingredients</b>: <br></br>&emsp;{recipe.ingredients}</div>
+      <div className="instructions" htmlFor="instructions"><b>Instructions</b>: <br></br>&emsp;{recipe.cooking_instructions}</div>
+      {/* <div className="description" htmlFor="description"><b>Description</b>: {recipe.description}</div>
       <div className="instructions" htmlFor="instructions"><b>Instructions</b>: {recipe.cooking_instructions}</div>
       <div className="description" htmlFor="description"><b>Description</b>: {recipe.description}</div>
-      <div className="instructions" htmlFor="instructions"><b>Instructions</b>: {recipe.cooking_instructions}</div>
-      <div className="description" htmlFor="description"><b>Description</b>: {recipe.description}</div>
-      <div className="instructions" htmlFor="instructions"><b>Instructions</b>: {recipe.cooking_instructions}</div>
+      <div className="instructions" htmlFor="instructions"><b>Instructions</b>: {recipe.cooking_instructions}</div> */}
 
 
     </section>
