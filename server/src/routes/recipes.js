@@ -13,6 +13,19 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/favorite-recipes/:id", (req, res) => {
+  const { id } = req.params;
+
+  recipesQueries
+    .favoriteRecipes(id)
+    .then((recipes) => {
+      res.status(200).json(recipes);
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
+});
+
 router.post("/", (req, res) => {
   const data = req.body;
   recipesQueries

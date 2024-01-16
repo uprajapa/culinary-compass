@@ -4,12 +4,6 @@ import axios from "axios";
 
 const base_url = import.meta.env.VITE_API_URL;
 
-
-function string_between_strings(startStr, endStr, str) {
-  pos = str.indexOf(startStr) + startStr.length;
-  return str.substring(pos, str.indexOf(endStr, pos));
-};
-
 const useRecipe = (id) => {
   const [recipe, setRecipe] = useState([]);
 

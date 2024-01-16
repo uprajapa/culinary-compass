@@ -33,14 +33,14 @@ const NavBarList = ({ cuisines, openModalLogin, openModalRecipe }) => {
         </button>
       </li>
 
-      {localStorage.getItem("user_name") ? (
+      {localStorage.getItem("email") ? (
         <li>
-          <div className="dropdown">
-            <div className="flex fle-col items-center">
-              <span>{localStorage.getItem("user_name")}</span>{" "}
-              <IoMdArrowDropdown />
-            </div>
-            <div className="dropdown-content">
+          <div className="profile-dropdown">
+            {localStorage.getItem("email")}
+            <div className="profile-dropdown-content">
+              <p><Link to="/favorite-recipes">Favorites</Link></p>
+              <p><Link to="/my-recipes">My recipes</Link></p>
+              <p><button onClick={logout}>Logout</button></p>
               <p className="hover:text-green-500" onClick={handleRecipeNew}>
                 New Recipe
               </p>
@@ -48,16 +48,18 @@ const NavBarList = ({ cuisines, openModalLogin, openModalRecipe }) => {
           </div>
         </li>
       ) : (
-        <li></li>
+        <li>
+          <button onClick={openModalLogin}>Login</button>
+        </li>
       )}
 
-      <li>
+      {/* <li>
         {localStorage.getItem("token") ? (
           <button onClick={logout}>Logout</button>
         ) : (
           <button onClick={openModalLogin}>Login</button>
         )}
-      </li>
+      </li> */}
     </ul>
   );
 };

@@ -1,24 +1,29 @@
-import { React, useReducer, useState } from "react";
+import { React, useEffect, useMemo, useReducer, useState, useSyncExternalStore } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Modal from "react-modal";
 import { MdClose } from "react-icons/md";
 import "./App.css";
+
+import favoriteIds from "./helpers/favoriteIds";
 
 import Home from "../src/pages/Home";
 import NavBar from "./components/NavBar";
 import Recipes from "../src/pages/Recipes";
 import Recipe from "./pages/Recipe";
 import Login from "./pages/Login";
+import MyRecipes from "./pages/MyRecipes";
 import CuisineCategory from "./pages/CuisineCategory";
+import FavoriteRecipes from "./pages/FavoriteRecipes";
 import useRecipes from "./hooks/useRecipes";
 import useTopRecipes from "./hooks/useTopRecipes";
 import useTopThreeRecipes from "./hooks/useTopThreeRecipes";
 import useCuisines from "./hooks/useCuisines";
+import useFavoriteRecipes from "./hooks/useFavoriteRecipes";
+import useAddFavorites from "./hooks/useAddFavorites";
+import useDeleteFavorites from "./hooks/useDeleteFavorites";
 
 import dataReducer, { MODAL_LOGIN, MODAL_RECIPE } from "./reducers/dataReducer";
 import RecipeForm from "./components/RecipeForm";
-
-import MyRecipes from "./pages/MyRecipes";
 
 const customStylesLogin = {
   overlay: {
@@ -66,13 +71,36 @@ function App() {
   const { cuisines } = useCuisines();
   const { topRecipes } = useTopRecipes();
   const { topThreeRecipes } = useTopThreeRecipes();
-  const [favorite, setFavorite] = useState({});
 
-  const handleFavorite = (recipeId) => {
-    setFavorite((prevFavorite) => ({
-      ...prevFavorite,
-      [recipeId]: !prevFavorite[recipeId],
-    }));
+  const [favoriteRecipes, setFavoriteRecipes] = useState([]);
+  // let favoriteRecipesIds = [];
+  const [favoriteRecipesIds, setFavoriteRecipesIds] = useState([]);
+  useEffect(() => {
+    if (recipes.length > 0) {
+      useFavoriteRecipes(recipes)
+        .then((favs) => {
+          setFavoriteRecipes(favs);
+          setFavoriteRecipesIds(favoriteIds(favs));
+        })
+        .catch((err) => console.error(err));
+    }
+  }, [recipes]);
+
+  const [favorite, setFavorite] = useState(false);
+
+  const handleFavorite = async (recipeId, isFavorite) => {
+    if (isFavorite) {
+      useDeleteFavorites(recipeId);
+    } else {
+      useAddFavorites(recipeId);
+    }
+    useFavoriteRecipes(recipes)
+      .then((favs) => {
+        setFavoriteRecipes(favs);
+        setFavoriteRecipesIds(favoriteIds(favs));
+        debugger
+      })
+      .catch((err) => console.error(err));
   };
 
   const closeModalLogin = () => {
@@ -108,6 +136,7 @@ function App() {
                 topThreeRecipes={topThreeRecipes}
                 favorite={favorite}
                 handleFavorite={handleFavorite}
+                favoriteRecipesIds={favoriteRecipesIds}
               />
             }
           />
@@ -118,20 +147,35 @@ function App() {
                 recipes={recipes}
                 favorite={favorite}
                 handleFavorite={handleFavorite}
+                favoriteRecipesIds={favoriteRecipesIds}
               />
             }
           />
+          {localStorage.getItem("email") &&
+            <Route
+              path="/favorite-recipes"
+              element={
+                <FavoriteRecipes
+                  favoriteRecipes={favoriteRecipes}
+                  favorite={favorite}
+                  favoriteRecipesIds={favoriteRecipesIds}
+                  handleFavorite={handleFavorite}
+                />
+              }
+            />
+          }
           <Route path="/recipes/:id" element={<Recipe />} />
           <Route
             path="/cuisines/:id"
             element={
               <CuisineCategory
                 favorite={favorite}
+                favoriteRecipesIds={favoriteRecipesIds}
                 handleFavorite={handleFavorite}
               />
             }
           />
-          <Route path="/myrecipes" element={<MyRecipes />} />
+          <Route path="/my-recipes" element={<MyRecipes />} />
         </Routes>
         <Modal
           isOpen={state.isModalOpenLogin}

@@ -35,6 +35,7 @@ const useRecipes = (closeModalRecipe) => {
       const response = await axios.get(`${base_url}/api/recipes`);
       if (response.status === 200) {
         const data = response.data;
+
         setRecipes(data.recipes);
       }
     } catch (error) {
