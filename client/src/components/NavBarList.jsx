@@ -1,11 +1,19 @@
 import { Link } from "react-router-dom";
 import useLogout from "../hooks/useLogout";
-
-const NavBarList = ({ cuisines, openModalLogin }) => {
+import { IoMdArrowDropdown } from "react-icons/io";
+const NavBarList = ({ cuisines, openModalLogin, openModalRecipe }) => {
   const { logout } = useLogout();
   const allCuisines = cuisines.map((cuisine) => (
     <p key={cuisine.name}>{cuisine.name}</p>
   ));
+
+  const handleRecipeNew = () => {
+    if (localStorage.getItem("email")) {
+      openModalRecipe();
+    } else {
+      openModalLogin();
+    }
+  };
 
   return (
     <ul className="navlinks">
@@ -27,8 +35,20 @@ const NavBarList = ({ cuisines, openModalLogin }) => {
         </button>
       </li>
 
-      {localStorage.getItem("email") !== "null" ? (
-        <li>{localStorage.getItem("email")}</li>
+      {localStorage.getItem("user_name") ? (
+        <li>
+          <div className="dropdown">
+            <div className="flex fle-col items-center">
+              <span>{localStorage.getItem("user_name")}</span>{" "}
+              <IoMdArrowDropdown />
+            </div>
+            <div className="dropdown-content">
+              <p className="hover:text-green-500" onClick={handleRecipeNew}>
+                New Recipe
+              </p>
+            </div>
+          </div>
+        </li>
       ) : (
         <li></li>
       )}

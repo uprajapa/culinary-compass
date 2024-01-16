@@ -15,9 +15,9 @@ router.post("/auth", (req, res) => {
 });
 
 router.post("/createUser", (req, res) => {
-  const { email, password } = req.body;
+  const { name, email, password } = req.body;
   userQueries
-    .createUser(email, password)
+    .createUser(name, email, password)
     .then((user) => {
       res.status(200).json(user);
     })

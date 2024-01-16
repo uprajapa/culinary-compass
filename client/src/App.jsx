@@ -15,9 +15,10 @@ import useRecipes from "./hooks/useRecipes";
 import useTopRecipes from "./hooks/useTopRecipes";
 import useTopThreeRecipes from "./hooks/useTopThreeRecipes";
 import useCuisines from "./hooks/useCuisines";
-import dataReducer, { MODAL_LOGIN } from "./reducers/dataReducer";
+import dataReducer, { MODAL_LOGIN, MODAL_RECIPE } from "./reducers/dataReducer";
+import RecipeForm from "./components/RecipeForm";
 
-const customStyles = {
+const customStylesLogin = {
   overlay: {
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     zIndex: 1000,
@@ -34,18 +35,35 @@ const customStyles = {
   },
 };
 
+const customStylesRecipe = {
+  overlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    zIndex: 1000,
+  },
+  content: {
+    width: "600px",
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    zIndex: 1001,
+  },
+};
+
 Modal.setAppElement("#root");
 
 function App() {
   const [state, dispatch] = useReducer(dataReducer, {
     isModalOpenLogin: false,
+    isModalOpenRecipe: false,
   });
 
   const { recipes } = useRecipes();
   const { cuisines } = useCuisines();
   const { topRecipes } = useTopRecipes();
   const { topThreeRecipes } = useTopThreeRecipes();
-
   const [favorite, setFavorite] = useState({});
   const handleFavorite = (recipeId) => {
     setFavorite((prevFavorite) => ({
@@ -62,10 +80,22 @@ function App() {
     dispatch({ type: MODAL_LOGIN });
   };
 
+  const closeModalRecipe = () => {
+    dispatch({ type: MODAL_RECIPE });
+  };
+
+  const openModalRecipe = () => {
+    dispatch({ type: MODAL_RECIPE });
+  };
+
   return (
     <>
       <Router>
-        <NavBar cuisines={cuisines} openModalLogin={openModalLogin} />
+        <NavBar
+          cuisines={cuisines}
+          openModalLogin={openModalLogin}
+          openModalRecipe={openModalRecipe}
+        />
         <Routes>
           <Route
             path="/"
@@ -93,13 +123,25 @@ function App() {
           isOpen={state.isModalOpenLogin}
           onRequestClose={closeModalLogin}
           contentLabel="Login Modal"
-          style={customStyles}
+          style={customStylesLogin}
         >
           <MdClose
             onClick={closeModalLogin}
             className="text-red-500 text-4xl bold cursor-pointer"
           />
           <Login closeModalLogin={closeModalLogin} />
+        </Modal>
+        <Modal
+          isOpen={state.isModalOpenRecipe}
+          onRequestClose={closeModalRecipe}
+          contentLabel="Recipe Modal"
+          style={customStylesRecipe}
+        >
+          <MdClose
+            onClick={closeModalRecipe}
+            className="text-red-500 text-4xl bold cursor-pointer"
+          />
+          <RecipeForm closeModalRecipe={closeModalRecipe} />
         </Modal>
       </Router>
     </>
