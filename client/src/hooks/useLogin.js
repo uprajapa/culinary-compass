@@ -5,6 +5,7 @@ const base_url = import.meta.env.VITE_API_URL;
 const useLogin = ({ closeModalLogin }) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const [messageError, setMessageError] = useState("");
@@ -12,11 +13,14 @@ const useLogin = ({ closeModalLogin }) => {
   const newUser = async () => {
     try {
       const response = await axios.post(`${base_url}/api/users/createUser`, {
+        name,
         email,
         password,
       });
       if (response.data.success === true) {
         await localStorage.setItem("token", response.data.token);
+        await localStorage.setItem("user_id", response.data.user_id);
+        await localStorage.setItem("user_name", response.data.user_name);
         await localStorage.setItem("email", response.data.email);
         setError(false);
         setMessageError("");
@@ -24,10 +28,10 @@ const useLogin = ({ closeModalLogin }) => {
       }
       setError(true);
       setMessageError(response.data.message);
-    } catch (error) {
+    } catch (err) {
       setError(true);
       setMessageError(response.data.message);
-      console.error("Login failed", error.response.data);
+      console.error("Login failed", err.response.data);
     }
   };
 
@@ -40,6 +44,8 @@ const useLogin = ({ closeModalLogin }) => {
 
       if (response.data.success === true) {
         await localStorage.setItem("token", response.data.token);
+        await localStorage.setItem("user_id", response.data.user_id);
+        await localStorage.setItem("user_name", response.data.user_name);
         await localStorage.setItem("email", response.data.email);
         setError(false);
         setMessageError("");
@@ -62,6 +68,8 @@ const useLogin = ({ closeModalLogin }) => {
     error,
     messageError,
     newUser,
+    name,
+    setName,
   };
 };
 

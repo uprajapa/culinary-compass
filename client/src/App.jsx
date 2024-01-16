@@ -9,7 +9,7 @@ import favoriteIds from "./helpers/favoriteIds";
 import Home from "../src/pages/Home";
 import NavBar from "./components/NavBar";
 import Recipes from "../src/pages/Recipes";
-import Recipe from "./pages/recipe";
+import Recipe from "./pages/Recipe";
 import Login from "./pages/Login";
 import MyRecipes from "./pages/MyRecipes";
 import CuisineCategory from "./pages/CuisineCategory";
@@ -19,12 +19,13 @@ import useTopRecipes from "./hooks/useTopRecipes";
 import useTopThreeRecipes from "./hooks/useTopThreeRecipes";
 import useCuisines from "./hooks/useCuisines";
 import useFavoriteRecipes from "./hooks/useFavoriteRecipes";
-
-import dataReducer, { MODAL_LOGIN } from "./reducers/dataReducer";
 import useAddFavorites from "./hooks/useAddFavorites";
 import useDeleteFavorites from "./hooks/useDeleteFavorites";
 
-const customStyles = {
+import dataReducer, { MODAL_LOGIN, MODAL_RECIPE } from "./reducers/dataReducer";
+import RecipeForm from "./components/RecipeForm";
+
+const customStylesLogin = {
   overlay: {
     backgroundColor: "rgba(0, 0, 0, 0.5)",
     zIndex: 1000,
@@ -41,12 +42,30 @@ const customStyles = {
   },
 };
 
+const customStylesRecipe = {
+  overlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    zIndex: 1000,
+  },
+  content: {
+    width: "600px",
+    top: "55%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    zIndex: 1001,
+  },
+};
+
 Modal.setAppElement("#root");
 
 function App() {
   const [loader, setLoader] = useState(false);
   const [state, dispatch] = useReducer(dataReducer, {
     isModalOpenLogin: false,
+    isModalOpenRecipe: false,
   });
 
   const { recipes } = useRecipes();
@@ -78,10 +97,22 @@ function App() {
     dispatch({ type: MODAL_LOGIN });
   };
 
+  const closeModalRecipe = () => {
+    dispatch({ type: MODAL_RECIPE });
+  };
+
+  const openModalRecipe = () => {
+    dispatch({ type: MODAL_RECIPE });
+  };
+
   return (
     <>
       <Router>
-        <NavBar cuisines={cuisines} openModalLogin={openModalLogin} />
+        <NavBar
+          cuisines={cuisines}
+          openModalLogin={openModalLogin}
+          openModalRecipe={openModalRecipe}
+        />
         <Routes>
           <Route
             path="/"
@@ -120,20 +151,40 @@ function App() {
             />
           }
           <Route path="/recipes/:id" element={<Recipe />} />
-          <Route path="/cuisines/:id" element={<CuisineCategory favoriteRecipesIds={favoriteRecipesIds} favorite={favorite} handleFavorite={handleFavorite} />} />
-          <Route path="/myrecipes" element={<MyRecipes />} />
+          <Route
+            path="/cuisines/:id"
+            element={
+              <CuisineCategory
+                favorite={favorite}
+                handleFavorite={handleFavorite}
+              />
+            }
+          />
+          <Route path="/my-recipes" element={<MyRecipes />} />
         </Routes>
         <Modal
           isOpen={state.isModalOpenLogin}
           onRequestClose={closeModalLogin}
           contentLabel="Login Modal"
-          style={customStyles}
+          style={customStylesLogin}
         >
           <MdClose
             onClick={closeModalLogin}
             className="text-red-500 text-4xl bold cursor-pointer"
           />
           <Login closeModalLogin={closeModalLogin} />
+        </Modal>
+        <Modal
+          isOpen={state.isModalOpenRecipe}
+          onRequestClose={closeModalRecipe}
+          contentLabel="Recipe Modal"
+          style={customStylesRecipe}
+        >
+          <MdClose
+            onClick={closeModalRecipe}
+            className="text-red-500 text-4xl bold cursor-pointer"
+          />
+          <RecipeForm closeModalRecipe={closeModalRecipe} />
         </Modal>
       </Router>
     </>

@@ -26,7 +26,7 @@ const japaneseRecipesApiRoutes = require("./src/routes/japaneseRecipes");
 const indianRecipesApiRoutes = require("./src/routes/indianRecipes");
 const koreanRecipesApiRoutes = require("./src/routes/koreanRecipes");
 const mexicanRecipesApiRoutes = require("./src/routes/mexicanRecipes");
-const popularRecipesApiRoutes = require("./src/routes/popularrecipes");
+const popularRecipesApiRoutes = require("./src/routes/popularRecipes");
 
 app.use("/api/users", usersApiRoutes);
 app.use("/api/recipes", recipesApiRoutes);
@@ -45,4 +45,3 @@ app.use("/api/cuisines/Popular", popularRecipesApiRoutes);
 app.listen(PORT, HOST, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
-

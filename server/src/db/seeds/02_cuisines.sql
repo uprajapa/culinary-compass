@@ -1,8 +1,8 @@
 INSERT INTO
-    cuisines (name)
+    cuisines (id, name)
 VALUES
-    ('Italian'),
-    ('Japanese'),
-    ('Indian'),
-    ('Korean'),
-    ('Mexican');
+    (1, 'Italian'),
+    (2, 'Japanese'),
+    (3, 'Indian'),
+    (4, 'Korean'),
+    (5, 'Mexican');
