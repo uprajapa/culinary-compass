@@ -243,6 +243,96 @@ VALUES
                 '1. In a medium-sized saucepan, boil water and salt it. Add your pasta, and cook according to the package instructions until al dente. When the pasta is cooked, reserve 1 cup of the pasta water and drain the pasta., 2. In a skillet over medium heat, heat olive oil and add chicken. Season with salt, pepper, and italian seasoning. Cook the chicken until browned and cooked through. You can use a kitchen thermometer to be sure that it has an internal temperature of 165°F/74°C., 3. Deglaze the skillet with a couple tablespoons of water (or pasta water), just to get the fond (brown bits), and scrape off with a wooden spoon. Then melt butter and saute garlic for 30 seconds., 4. Add cream, whisk, then add parmesan and basil pesto. Whisk and cook the sauce for 30 seconds – 1 minute or until the parmesan cheese has melted and the sauce is warmed up. Avoid overcooking, as that can make the pesto turn yellow. Add pasta water to thin the sauce if needed., 5. Add the cooked pasta and chicken to the sauce, and gently mix everything together until combined.',
                 'https://www.youtube.com/watch?v=t6tTTgvxMW8',
                 'https://littlesunnykitchen.com/wp-content/uploads/2022/11/Chicken-Pesto-Pasta-1.jpg'
+        ),
+        (
+                02,
+                02,
+                'Champs Japanese Kitchen',
+                'Perfect Chicken Teriyaki',
+                15,
+                05,
+                25,
+                04,
+                'It’s so simple and delicious, anyone can make it at home!',
+                '1 Large Chicken Thigh (skin on), Potato Starch, ½ Green Onion, 1tbsp of Cooking Sake, 2 tsp of brown sugar, 1 & ½ tbsp of water, 1 & ½ tbsp of soy sauce, 2 tsp of honey',
+                '1. Cut off any fatty parts of one large chicken thigh (skin on), 2.Cover the chicken thigh in potato (or corn) starch on both sides and sprinkle with salt and pepper, 3. Make your sauce by mixing your cooking sake, brown sugar, water, soy sauce and honey and mixing them, 4. Heat some olive oil in a frying pan on a medium heat and put the chicken in skin side down, 5. Add your green onions and cook the chicken until the skin is golden brown and crispy (be careful not to burn the onions!), 6. Turn the chicken over, set aside the green onions and continue to cook the chicken on a low heat with the lid on - for about 3 minutes, 7. Take the chicken out of the pan - wipe away the excess fat and then put them back in with the sauce, 8. Let that simmer with the lid on for about 5 minutes, 9. Cover the chicken in sauce and you’re done!',
+                'https://www.youtube.com/watch?v=A4yY7rkzATI',
+                'https://img.freepik.com/premium-photo/grilled-chicken-with-teriyaki-sauce-topped-rice_1339-71455.jpg?w=2000'
+        ),
+        (
+                02,
+                02,
+                'Champs Japanese Kitchen',
+                'Gyudon - Beef Bowl',
+                16,
+                10,
+                25,
+                02,
+                'An upscale version of a common Japanese fast food dish',
+                '200g Beef Loin (Thinly Sliced), 140ml water, 100ml of mirin, 60ml of soy sauce, 2tbsp of brown sugar, a small bit of dashi fish stock (optional), ½ Onion, ½ a washed burdock root, 1 egg (per Gyudon) - for onsen tamago, 480g of rice (for 3 portions), 650ml of water.',
+                '1. Add 140ml water, 100ml of mirin, 60ml of soy sauce, 2 tbsp of brown sugar and a sprinkle of dashi fish stock into the pan you will use to cook the beef, 2. Cut half a root of washed burdock into small slices and add to the water straight away (to avoid it oxidizing) ginger can also be substituted instead of burdock, 3. Cut half an onion into thin slices and add to the liquid as well, 4. Turn to a high heat with the lid on, 5. Once it starts to boil, add your thinly sliced beef and cook for a few minutes until cooked through, 6. Let the Beef Stew in the sauce for around 5 minutes, 7. Serve on top of your rice!',
+                'https://www.youtube.com/watch?v=BVgf5GOcCsQ',
+                'https://img.freepik.com/premium-photo/gyudon-savory-beef-bowl-with-sweet-sauce_818261-25772.jpg?size=626&ext=jpg&ga=GA1.1.1140369333.1705370928&semt=sph'
+        ),
+        (
+                02,
+                02,
+                'Champs Japanese Kitchen',
+                'Yakisoba',
+                18,
+                10,
+                30,
+                02,
+                'Make on of Japans most iconic dishes - Yakisoba!',
+                'Mirin Substitute: 50ml white wine, 1 tbsp white sugar. Yakisoba Sauce: 50ml Worcestershire sauce, 20ml Soy sauce, 20g Oyster sauce, 1 tbsp mirin substitute.  50g cabbage cut into bite-sized pieces, 50g onion cut into thin slices, 50g beansprouts, 40g carrot cut into thin slices, 2g ginger cut into thin slices, 2g garlic cut into fine pieces, 1tbsp Neutral Flavoured Oil, 2 packets of noodles (around 300g) or 1.8mm spaghetti, 100g thinly sliced pork cut into bite-size pieces, 50ml water, Aonori (Dried Seaweed)',
+                '1. Mix the white wine and sugar to make the mirin substitute (You can usual regular mirin if you have), 2. In a bowl, mix the Worcestershire sauce, soy sauce, oyster sauce, and mirin., 3. In a frying pan, add 1 tbsp of neutral-flavored oil and fry the ginger, then fry and add in the pork. Set aside., 4. In the same pan, add the ginger and fry until fragrant., 5. Add in the onions and carrots and fry for 1 minute, then add the cabbage and cook till tender. Set aside., 6. Boil the noodles for 30 seconds. Drain., 7. On medium heat, add 1 tbsp oil. Add in the noodles and press down with a spatula till the outside is crispy. Flip over and repeat. 8. Using tongs or chopsticks, break the noodles apart. Add in the pork and vegetables and mix together.Add the sauce and mix again., 9. Right at the end, add in the beansprouts and water., 10. Fry for another 30 seconds., 11. Serve and top with dried seaweed!',
+                'https://www.youtube.com/watch?v=Y1tgGj7ysFI',
+                'https://cdn.create.vista.com/api/media/medium/53746279/stock-photo-stir-fried-noodles-yakisoba?token='
+        ),
+        (
+                02,
+                04,
+                'Korean Bapsang',
+                'Gyeran Mari - Rolled Omelette',
+                05,
+                10,
+                05,
+                02,
+                'This Korean rolled egg is a popular side dish, especially for lunch!',
+                '3 large eggs You can use 5 or more eggs for thicker rolls, 1 or 1.5 tablespoons finely chopped scallion, 1 or 1.5 tablespoons finely chopped carrot, Salt to taste about ⅛, Pinch black pepper, vegetable oil for frying',
+                '1. Finely chop the scallion and carrot., 2. Crack and beat the eggs, in a bowl with a spoon, a fork, or a pair of chopsticks until the yolks and whites are blended well with no visible strings of whites. Stir in salt and pepper., 3. Stir in the chopped vegetables., 4. Add a teaspoon of vegetable oil to a medium size non-stick pan and distribute the oil evenly using a napkin or paper towel. Preheat over medium low heat, until it feels hot when you place your hand 2 to 3 inches above the bottom of the pan., 5. Add 1/2 of the egg mixture to the pan. Swirl it around to cover the pan. Let it cook until the top begins to set but is still wet., 6. Using a spatula, lift one end of the egg (about 1-1/2 inches) and fold it over to the other side. Reduce the heat or raise the pan away from the heat for a little while if the bottom is browning., 7. Lift the folded part and fold it again. Pull the egg to the rolled side, making room on the round end for more egg mixture. Add 1/2 of the remaining egg and spread to cover the open space., 8. When the egg addition is set, lift the folded part and fold it again. Pull the egg to the rolled side and repeat the process with the remaining egg to make an about 2-inch egg log., 9. Remove from the pan and let cool for about 5 minutes. Slice the egg into thick, even pieces (3/4 to 1-inch thick).',
+                'https://www.youtube.com/watch?v=8DgL9y7u41o',
+                'https://www.koreanbapsang.com/wp-content/uploads/2019/10/DSC_1183-2.jpg'
+        ),
+        (
+                02,
+                04,
+                'Korean Bapsang',
+                'Dubu Jorim - Braised Tofu',
+                15,
+                10,
+                15,
+                04,
+                'Dubu jorim is a popular tofu dish that’s braised in a simple soy sauce-based sauce.',
+                '1 about 18-oz pack firm tofu, 1 tablespoon vegetable/canola oil, 3 tablespoons soy sauce, 3 tablespoons water, 1 tablespoon sesame oil, 1 teaspoon sugar, 1 teaspoon Korean red pepper flakes, 1 teaspoon sesame seed, 1 teaspoon minced garlic, 2 scallions (1 if large), finely chopped about 1/4 cup',
+                '1. Cut the tofu block into 1/2-inch thick rectangular pieces. Pat dry with a paper towel., 2. Prepare the sauce by mixing all ingredients together., 3. Heat a tablespoon of oil in a large non-stick skillet, carefully add the tofu pieces (tofu breaks easily) and sear over medium to medium high heat until lightly golden brown (about 3 - 4 minutes each side)., 4. Spoon the sauce over the tofu pieces. Slightly lift a side of the tofu pieces to get the sauce under them. Simmer for 3 - 4 minutes over medium to medium low heat. Flip them over, and simmer for another minute or two, spooning the sauce over the tofu pieces. Serve warm or cold with a bowl of rice.',
+                'https://www.youtube.com/watch?v=oksM3PIc3AA',
+                'https://www.koreanbapsang.com/wp-content/uploads/2010/03/DSC3375.jpg'
+        ),
+        (
+                02,
+                04,
+                'Korean Bapsang',
+                'Gamja Jorim - Brasied Potatoes',
+                10,
+                10,
+                15,
+                04,
+                'Gamja jorim is a popular Korean side dish made with potatoes and a few basic ingredients',
+                '1.5 pounds potatoes (about 3 medium size), 1 carrot (about 3 ounces), 2 to 3 green chili peppers (or 1/2 green bell pepper), 1/4 medium onion, 1 tablespoon cooking oil, 3 tablespoons soy sauce, 1 tablespoon sugar, 1 tablespoon rice wine (or mirin), 1 tablespoon corn syrup (or oilgodang), 1 teaspoon  minced garlic, pinch black pepper, 3/4 cup water, 1 teaspoon sesame oil, 1/2 teaspoon roasted sesame seeds',
+                '1. Peel and cut potatoes into about 1-inch cubes. Cut the carrot, peppers, and onion into big chunks., 2. In a small bowl, combine all the braising liquid ingredients except the sesame oil and seeds. Stir well., 3. In a non-stick pan (or a small pot), sauté the potatoes in cooking oil over medium heat for 4 - 5 minutes, stirring occasionally so the potatoes don`t stick to the pan., 4. Add the sauce mix and bring it to a boil over high heat. Drop the carrot pieces in. Cover, and reduce the heat to medium and cook until the potatoes are almost cooked through (about 5 to 6 minutes, depending on the type or size of potatoes). The potatoes should be firm and not mushy., 5. Stir in the green peppers and onion, and continue to boil (uncover this time) until the sauce is reduced and slightly thickened, about 3 minutes. The potatoes will continue to soak up the sauce even after being cooked. Stir in the sesame oil and sprinkle with sesame seeds.',
+                'https://www.youtube.com/watch?v=GZ5ST5XbiIo',
+                'https://www.koreanbapsang.com/wp-content/uploads/2009/11/DSC_0069-e1470616873313.jpg'
         );
 
 -- Easy Egg Fried Rice picture credit: Trista Chen from https://www.pexels.com/photo/cooked-rice-on-black-ceramic-plate-723198/
@@ -258,6 +348,12 @@ VALUES
 -- Spaghetti With Homemade Meat Sauce picture credit: Monika1607 from https://pixabay.com/photos/spaghetti-bolognese-italian-court-4546233/
 -- Creamy Tuscan Chicken picture credit: Nickey from https://www.kitchensanctuary.com/tuscan-chicken/
 -- Classic Tiramisu picture credit: Min Che from https://www.pexels.com/photo/close-up-shot-of-a-sliced-cake-6880219/
--- Creamy Chicken Pesto Past picture credit: Diana https://littlesunnykitchen.com/creamy-chicken-pesto-pasta/
+-- Creamy Chicken Pesto Past picture credit: Diana from https://littlesunnykitchen.com/creamy-chicken-pesto-pasta/
+-- Perfect Chicken Teriyaki picture credit: topntp26 from https://www.freepik.com/premium-photo/grilled-chicken-with-teriyaki-sauce-topped-rice_5395421.htm#query=chicken%20teriyaki&position=17&from_view=keyword&track=ais&uuid=d55eba0c-c75f-4ac0-ab03-ec8e39052400
+-- Gyudon - Beef Bowl picture credit: Kriserdmann from https://www.freepik.com/premium-ai-image/gyudon-savory-beef-bowl-with-sweet-sauce_126542123.htm#query=gyudon&position=11&from_view=keyword&track=sph&uuid=91303538-1923-40d7-bfa6-181c991403c7
+-- Yakisoba picture credit: pichetw from https://create.vista.com/unlimited/stock-photos/53746279/stock-photo-stir-fried-noodles-yakisoba/
+-- Gyeran Mari - Rolled Omelette picture credit: Korean Bapsang from https://www.koreanbapsang.com/gyeran-mari-korean-rolled-omelette/
+-- Dubu Jorim - Braised Tofu picture credit: Korean Bapsang from https://www.koreanbapsang.com/dubu-jorim-korean-braised-tofu/
+-- Gamja Jorim - Brasied Potatoes picture credit: Korean Bapsang from https://www.koreanbapsang.com/gamja-jorim-braised-potatoes/
 --  https://www.budgetbytes.com/hearty-black-bean-quesadillas/
 
