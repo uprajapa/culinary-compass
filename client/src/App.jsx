@@ -1,4 +1,4 @@
-import { React, useReducer, useState, useSyncExternalStore } from "react";
+import { React, useEffect, useMemo, useReducer, useState, useSyncExternalStore } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Modal from "react-modal";
 import { MdClose } from "react-icons/md";
@@ -62,7 +62,6 @@ const customStylesRecipe = {
 Modal.setAppElement("#root");
 
 function App() {
-  const [loader, setLoader] = useState(false);
   const [state, dispatch] = useReducer(dataReducer, {
     isModalOpenLogin: false,
     isModalOpenRecipe: false,
@@ -72,21 +71,36 @@ function App() {
   const { cuisines } = useCuisines();
   const { topRecipes } = useTopRecipes();
   const { topThreeRecipes } = useTopThreeRecipes();
-  let { favoriteRecipes } = useFavoriteRecipes(recipes);
-  let favoriteRecipesIds = favoriteIds(favoriteRecipes);
-  console.log(`Fav Ids:`, favoriteRecipesIds);
+
+  const [favoriteRecipes, setFavoriteRecipes] = useState([]);
+  // let favoriteRecipesIds = [];
+  const [favoriteRecipesIds, setFavoriteRecipesIds] = useState([]);
+  useEffect(() => {
+    if (recipes.length > 0) {
+      useFavoriteRecipes(recipes)
+        .then((favs) => {
+          setFavoriteRecipes(favs);
+          setFavoriteRecipesIds(favoriteIds(favs));
+        })
+        .catch((err) => console.error(err));
+    }
+  }, [recipes]);
 
   const [favorite, setFavorite] = useState(false);
 
   const handleFavorite = async (recipeId, isFavorite) => {
-    console.log(`Favorite:`, isFavorite);
     if (isFavorite) {
       useDeleteFavorites(recipeId);
     } else {
       useAddFavorites(recipeId);
     }
-    favoriteRecipesIds = favoriteIds(favoriteRecipes);
-    console.log(favoriteRecipesIds);
+    useFavoriteRecipes(recipes)
+      .then((favs) => {
+        setFavoriteRecipes(favs);
+        setFavoriteRecipesIds(favoriteIds(favs));
+        debugger
+      })
+      .catch((err) => console.error(err));
   };
 
   const closeModalLogin = () => {
@@ -156,6 +170,7 @@ function App() {
             element={
               <CuisineCategory
                 favorite={favorite}
+                favoriteRecipesIds={favoriteRecipesIds}
                 handleFavorite={handleFavorite}
               />
             }

@@ -19,13 +19,10 @@ const RecipeListItem = (props) => {
     favoriteRecipesIds
   } = props;
 
-
-
-  let isFavorite = false;
+  // let isFavorite = false;
+  const [isFavorite, setIsFavorite] = useState(false)
   useEffect(() => {
-    isFavorite = favoriteRecipesIds?.includes(id)
-    // console.log(isFavorite);
-    // console.log(`Fav Recipe Ids: ${favoriteRecipesIds}, Recipe Id: ${id}`);
+    setIsFavorite(favoriteRecipesIds?.includes(id))
   }, [favoriteRecipesIds])
 
 

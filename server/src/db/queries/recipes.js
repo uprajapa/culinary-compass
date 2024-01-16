@@ -34,7 +34,7 @@ const findTopThreeRecipes = async () => {
       "SELECT recipes.id, recipes.chef_name, recipes.recipe_name, recipes.budget, recipes.cook_time, cuisines.name AS cuisine_name, recipes.description, recipes.photo_link FROM ratings JOIN recipes ON recipes.id = ratings.recipe_id JOIN cuisines ON cuisines.id = recipes.cuisine_id  WHERE rating > 4 GROUP BY recipe_id, recipes.id, recipes.video_link, cuisines.name LIMIT 3;";
     const result = await db.query(query);
     if (result.rowCount > 0) {
-      console.log(result.rows);
+
       return { success: true, recipes: result.rows };
     } else {
       return { success: true, recipes: [] };
@@ -59,7 +59,7 @@ const newRecipe = async (data) => {
     video_link,
     photo_link,
   } = data;
-  console.log(`aqui ${cuisine_id}`);
+
   try {
     const query = `INSERT INTO recipes (user_id,
       cuisine_id,
@@ -135,7 +135,7 @@ const findItalianRecipes = async () => {
       "SELECT *, recipes.id, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Italian';";
     const result = await db.query(query);
     if (result.rowCount > 0) {
-      console.log(result.rows);
+
       return { success: true, recipes: result.rows };
     } else {
       return { success: true, recipes: [] };
@@ -150,7 +150,7 @@ const findJapaneseRecipes = async () => {
       "SELECT *, recipes.id, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Japanese';";
     const result = await db.query(query);
     if (result.rowCount > 0) {
-      console.log(result.rows);
+
       return { success: true, recipes: result.rows };
     } else {
       return { success: true, recipes: [] };
@@ -165,7 +165,7 @@ const findIndianRecipes = async () => {
       "SELECT *, recipes.id, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Indian';";
     const result = await db.query(query);
     if (result.rowCount > 0) {
-      console.log(result.rows);
+
       return { success: true, recipes: result.rows };
     } else {
       return { success: true, recipes: [] };
@@ -180,7 +180,7 @@ const findKoreanRecipes = async () => {
       "SELECT *, recipes.id, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Korean';";
     const result = await db.query(query);
     if (result.rowCount > 0) {
-      console.log(result.rows);
+
       return { success: true, recipes: result.rows };
     } else {
       return { success: true, recipes: [] };
@@ -195,7 +195,7 @@ const findMexicanRecipes = async () => {
       "SELECT *, recipes.id, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Mexican';";
     const result = await db.query(query);
     if (result.rowCount > 0) {
-      console.log(result.rows);
+
       return { success: true, recipes: result.rows };
     } else {
       return { success: true, recipes: [] };

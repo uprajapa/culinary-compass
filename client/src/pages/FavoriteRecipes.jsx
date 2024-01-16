@@ -12,7 +12,7 @@ function FavoriteRecipes({ favoriteRecipes, favorite, handleFavorite, favoriteRe
       </>
     )
   }
-  console.log(favoriteRecipesIds);
+
   return (
     <div className="recipe">
       <h1 className="title">My Favorite Recipes</h1>

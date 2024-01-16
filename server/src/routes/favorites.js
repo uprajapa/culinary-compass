@@ -4,7 +4,7 @@ const favorites = require("../db/queries/favorites");
 
 router.post("/", (req, res) => {
   const { userId, recipeId } = req.body;
-  console.log(req.body);
+
   favorites
     .addFavorites(userId, recipeId)
     .then((data) => {
@@ -17,7 +17,7 @@ router.post("/", (req, res) => {
 
 router.delete("/", (req, res) => {
   const { userId, recipeId } = req.body;
-  console.log(req.body);
+
   favorites
     .deleteFavorite(userId, recipeId)
     .then((data) => {
