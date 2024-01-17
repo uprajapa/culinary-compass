@@ -35,7 +35,7 @@ const useRecipe = (id) => {
         setRecipe(data.recipe);
       }
     } catch (err) {
-      console.error("Error fetching recipe:", err.response.data.error);
+      console.error("Error fetching recipe:", err);
     }
   };
 

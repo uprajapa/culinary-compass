@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import useLogout from "../hooks/useLogout";
-import { IoMdArrowDropdown } from "react-icons/io";
+
 const NavBarList = ({ cuisines, openModalLogin, openModalRecipe }) => {
   const { logout } = useLogout();
   const allCuisines = cuisines.map((cuisine) => <p key={cuisine.name}><Link to={`cuisines/${cuisine.name}`} reloadDocument>{cuisine.name}</Link></p>);
@@ -16,8 +16,12 @@ const NavBarList = ({ cuisines, openModalLogin, openModalRecipe }) => {
   return (
     <ul className="navlinks">
       <li>
+        <Link to="/recipes" reloadDocument>All recipes</Link>
+      </li>
+
+      <li>
         <div className="dropdown">
-          Cuisines
+          Cuisines &#9207;
           <div className="dropdown-content">{allCuisines}</div>
         </div>
       </li>
@@ -26,24 +30,24 @@ const NavBarList = ({ cuisines, openModalLogin, openModalRecipe }) => {
         <Link to="cuisines/Popular" reloadDocument>Popular</Link>
       </li>
 
-      <li className="searchBar">
+      {/* <li className="searchBar">
         <input type="text" placeholder="Search"></input>
         <button type="submit">
           <i className="fa fa-search"></i>
         </button>
-      </li>
+      </li> */}
 
       {localStorage.getItem("email") ? (
         <li>
           <div className="profile-dropdown">
-            {localStorage.getItem("email")}
+            {localStorage.getItem("user_name")} &#9207;
             <div className="profile-dropdown-content">
-              <p><Link to="/favorite-recipes">Favorites</Link></p>
-              <p><Link to="/my-recipes">My recipes</Link></p>
-              <p><button onClick={logout}>Logout</button></p>
               <p className="hover:text-green-500" onClick={handleRecipeNew}>
                 New Recipe
               </p>
+              <p><Link to="/favorite-recipes">Favorites</Link></p>
+              <p><Link to="/my-recipes">My recipes</Link></p>
+              <p><button onClick={logout}>Logout</button></p>
             </div>
           </div>
         </li>
