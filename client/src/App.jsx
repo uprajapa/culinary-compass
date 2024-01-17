@@ -2,7 +2,6 @@ import { React, useEffect, useMemo, useReducer, useState, useSyncExternalStore }
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Modal from "react-modal";
 import { MdClose } from "react-icons/md";
-import { MDBFooter } from 'mdb-react-ui-kit';
 import "./App.css";
 
 import favoriteIds from "./helpers/favoriteIds";
@@ -49,7 +48,7 @@ const customStylesRecipe = {
     zIndex: 1000,
   },
   content: {
-    width: "100rem",
+    width: "600px",
     top: "55%",
     left: "50%",
     right: "auto",
@@ -74,8 +73,8 @@ function App() {
   const { topThreeRecipes } = useTopThreeRecipes();
 
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
+  // let favoriteRecipesIds = [];
   const [favoriteRecipesIds, setFavoriteRecipesIds] = useState([]);
-
   useEffect(() => {
     if (recipes.length > 0) {
       useFavoriteRecipes(recipes)
@@ -86,6 +85,8 @@ function App() {
         .catch((err) => console.error(err));
     }
   }, [recipes]);
+
+  const [favorite, setFavorite] = useState(false);
 
   const handleFavorite = async (recipeId, isFavorite) => {
     if (isFavorite) {
@@ -133,6 +134,7 @@ function App() {
               <Home
                 topRecipes={topRecipes}
                 topThreeRecipes={topThreeRecipes}
+                favorite={favorite}
                 handleFavorite={handleFavorite}
                 favoriteRecipesIds={favoriteRecipesIds}
               />
@@ -143,6 +145,7 @@ function App() {
             element={
               <Recipes
                 recipes={recipes}
+                favorite={favorite}
                 handleFavorite={handleFavorite}
                 favoriteRecipesIds={favoriteRecipesIds}
               />
@@ -154,6 +157,7 @@ function App() {
               element={
                 <FavoriteRecipes
                   favoriteRecipes={favoriteRecipes}
+                  favorite={favorite}
                   favoriteRecipesIds={favoriteRecipesIds}
                   handleFavorite={handleFavorite}
                 />
@@ -165,6 +169,7 @@ function App() {
             path="/cuisines/:id"
             element={
               <CuisineCategory
+                favorite={favorite}
                 favoriteRecipesIds={favoriteRecipesIds}
                 handleFavorite={handleFavorite}
               />
@@ -196,17 +201,7 @@ function App() {
           />
           <RecipeForm closeModalRecipe={closeModalRecipe} />
         </Modal>
-        <MDBFooter bgColor='light' className='text-center text-lg-left'>
-          <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-            &copy; {new Date().getFullYear()} Copyright:{' '}
-            <a className='text-dark' href='https://mdbootstrap.com/'>
-              MDBootstrap.com
-            </a>
-          </div>
-        </MDBFooter>
       </Router>
-
-
     </>
   );
 }

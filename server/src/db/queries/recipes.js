@@ -91,7 +91,7 @@ const newRecipe = async (data) => {
     ]);
 
     if (result.rowCount === 1) {
-      return { success: true, data: result };
+      return { success: true };
     } else {
       return { success: false };
     }

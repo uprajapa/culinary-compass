@@ -14,10 +14,12 @@ const RecipeListItem = (props) => {
     description,
     photo_link,
     id,
+    favorite,
     handleFavorite,
     favoriteRecipesIds
   } = props;
 
+  // let isFavorite = false;
   const [isFavorite, setIsFavorite] = useState(false)
   useEffect(() => {
     setIsFavorite(favoriteRecipesIds?.includes(id))
@@ -32,6 +34,7 @@ const RecipeListItem = (props) => {
           isfavorite={isFavorite}
           onClick={() => handleFavorite(id, isFavorite)}
         />
+        {/* <img src={photo_link}/> */}
       </div>
       <div className="profile-info">
         <Link to={`/recipes/${id}`} reloadDocument>
