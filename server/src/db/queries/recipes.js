@@ -68,8 +68,7 @@ const deleteById = async (id) => {
     return { success: false, message: error };
   }
 };
-// DELETE FROM recipes
-//   WHERE producer_id IN (SELECT id FROM producers WHERE name = 'foo');
+
 const findItalianRecipes = async () => {
   try {
     const query = "SELECT *, recipes.id, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Italian';";
