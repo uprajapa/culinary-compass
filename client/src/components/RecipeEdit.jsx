@@ -3,16 +3,8 @@ import useRecipes from "../hooks/useRecipes";
 import SelectCusine from "./SelectCusine";
 import ErrorMessage from "../components/ErrorMessage";
 
-const RecipeEdit = (props) => {
-  const { closeEditModal, id,
-    recipe_name,
-    chef_name,
-    budget,
-    time,
-    cuisine,
-    description,
-    photo_link } = props;
-  console.log(recipe_name);
+const RecipeEdit = ({ recipe, closeEditModal }) => {
+
   const { editRecipes, error, messageError } = useRecipes(closeEditModal);
   const [formData, setFormData] = useState({
     user_id: recipe.user_id,
@@ -42,7 +34,7 @@ const RecipeEdit = (props) => {
 
 
   return (
-    
+
     <div>
       <div className="mt-4 mb-4">
         {error && <ErrorMessage messageError={messageError} />}
@@ -61,7 +53,7 @@ const RecipeEdit = (props) => {
               name="recipe_name"
               value={formData.recipe_name}
               onChange={handleChange}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Recipe Name"
               required
             />
@@ -72,7 +64,7 @@ const RecipeEdit = (props) => {
               onChange={handleChange}
               id="chef_name"
               disabled
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Chef Name"
               required
             />
@@ -84,7 +76,7 @@ const RecipeEdit = (props) => {
               onChange={handleChange}
               name="prep_time"
               id="prep_time"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Prep Time"
               required
             />
@@ -94,7 +86,7 @@ const RecipeEdit = (props) => {
               value={formData.cook_time}
               onChange={handleChange}
               id="cook_time"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Cooking Time"
               required
             />
@@ -106,7 +98,7 @@ const RecipeEdit = (props) => {
               value={formData.budget}
               onChange={handleChange}
               id="budget"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Budget"
               required
             />
@@ -116,7 +108,7 @@ const RecipeEdit = (props) => {
               value={formData.servings}
               onChange={handleChange}
               id="servings"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="How many people servings?"
               required
             />
@@ -128,7 +120,7 @@ const RecipeEdit = (props) => {
               value={formData.video_link}
               onChange={handleChange}
               id="video_link"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="https://youtube.com"
               required
             />
@@ -138,7 +130,7 @@ const RecipeEdit = (props) => {
               value={formData.photo_link}
               onChange={handleChange}
               id="photo_link"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="https://photo.com"
               required
             />
@@ -150,7 +142,7 @@ const RecipeEdit = (props) => {
               value={formData.description}
               onChange={handleChange}
               rows="4"
-              className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Description"
             ></textarea>
           </div>
@@ -161,7 +153,7 @@ const RecipeEdit = (props) => {
               value={formData.ingredients}
               onChange={handleChange}
               rows="4"
-              className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Ingredients"
             ></textarea>
           </div>
@@ -172,7 +164,7 @@ const RecipeEdit = (props) => {
               value={formData.cooking_instructions}
               onChange={handleChange}
               rows="4"
-              className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="block p-2.5 w-full text-lg text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Cooking Instructions"
             ></textarea>
           </div>
