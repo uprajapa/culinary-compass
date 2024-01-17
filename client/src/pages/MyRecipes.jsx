@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import "../../public/css/myrecipes.css"
-import EditRecipe from '../components/EditRecipe';
 import useRecipes from '../hooks/useRecipes';
 import axios from 'axios';
 
@@ -28,7 +27,7 @@ function MyRecipes() {
         {recipes.map(recipe => 
           <tr key={recipe.id} className="content-row">
             <td className="content-data">{recipe.recipe_name}</td>
-            <td className="content-data"><EditRecipe/></td>
+            <td className="content-data">Edit</td>
             <td className="content-data"><button onClick={()=> deleteRecipe(recipe.id)}>Delete</button></td>
           </tr>
           )}

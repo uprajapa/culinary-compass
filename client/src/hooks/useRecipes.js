@@ -43,7 +43,7 @@ const useRecipes = (closeModalRecipe) => {
     }
   };
 
-  return { recipes, newRecipe, error, messageError };
+  return { recipes, newRecipe, error, messageError, setRecipes };
 };
 
 export default useRecipes;
