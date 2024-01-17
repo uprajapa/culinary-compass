@@ -143,6 +143,20 @@ const deleteById = async (id) => {
   }
 };
 
+const editById = async (id, chef_name, recipe_name, budget, prep_time, cook_time, servings, description, ingredients, cooking_instructions, video_link, photo_link, cuisine_id, user_id) => {
+  try {
+    const query = "UPDATE recipes SET chef_name=$1, recipe_name=$2, budget=$3, prep_time=$4, cook_time=$5, servings=$6, description=$7, ingredients=$8, cooking_instructions=$9, video_link=$10, photo_link=$11, cuisine_id=$12 WHERE id = $14 RETURNING id";
+    const result = await db.query(query, [chef_name, recipe_name, budget, prep_time, cook_time, servings, description, ingredients, cooking_instructions, video_link, photo_link, cuisine_id, user_id, id]);
+    if (result.rowCount > 0) {
+      return { success: true, recipe: result.rows[0] };
+    } else {
+      return { success: true, recipe: [] };
+    }
+  } catch (error) {
+    return { success: false, message: error };
+  }
+};
+
 const favoriteRecipes = async (id) => {
   try {
     const query = "SELECT recipe_id FROM favorites WHERE user_id = $1;";
@@ -246,5 +260,6 @@ module.exports = {
   findKoreanRecipes,
   findMexicanRecipes,
   newRecipe,
-  findByUserId
+  findByUserId,
+  editById
 };

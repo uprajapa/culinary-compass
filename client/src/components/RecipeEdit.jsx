@@ -7,6 +7,7 @@ const RecipeEdit = ({ recipe, closeEditModal }) => {
 
   const { editRecipes, error, messageError } = useRecipes(closeEditModal);
   const [formData, setFormData] = useState({
+    id: recipe.id,
     user_id: recipe.user_id,
     cuisine_id: recipe.cuisine_id,
     chef_name: localStorage.getItem("user_name"),
@@ -36,9 +37,9 @@ const RecipeEdit = ({ recipe, closeEditModal }) => {
   return (
 
     <div>
-      <div className="mt-4 mb-4">
+      {/* <div className="mt-4 mb-4">
         {error && <ErrorMessage messageError={messageError} />}
-      </div>
+      </div> */}
 
       <p className="text-center text-4xl">Edit Recipe</p>
       <form onSubmit={handleSubmit}>

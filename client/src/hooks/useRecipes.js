@@ -34,21 +34,21 @@ const useRecipes = (closeModalRecipe) => {
  
   const editRecipes = async (data) => {
     try {
-      const response = await axios.post(`${base_url}/api/recipes/`, data);
-      let newRecipeId = response.data.data.rows[0].id;
+      console.log(data);
+      let id = data.id;
+      const response = await axios.put(`${base_url}/api/recipes/${id}`, data);
+      console.log(response);
       if (response.data.success) {
         setError(false);
         setMessageError("");
         closeModalRecipe();
-        window.location.href = `/recipes/${newRecipeId}`;
+        window.location.href = `/recipes/${id}`;
       } else {
-        setError(true);
-        setMessageError(response.data.message);
+        console.error(response.data.message);
 
       }
     } catch (error) {
-      setError(true);
-      setMessageError(error);
+      console.error(error);
     }
   };
 

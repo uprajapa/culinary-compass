@@ -76,9 +76,9 @@ router.delete("/:id", (req, res) => {
 
 router.put("/:id", (req, res) => {
   const { id } = req.params;
-  const {  } = req.body;
+  const { chef_name, recipe_name, budget, prep_time, cook_time, servings, description, ingredients, cooking_instructions, video_link, photo_link, cuisine_id, user_id } = req.body;
   recipesQueries
-    .editById(id)
+    .editById(id, chef_name, recipe_name, budget, prep_time, cook_time, servings, description, ingredients, cooking_instructions, video_link, photo_link, cuisine_id, user_id )
     .then((recipe) => {
       res.status(200).json(recipe);
     })
