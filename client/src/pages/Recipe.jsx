@@ -24,9 +24,6 @@ function Recipe() {
       <div className="instructions" htmlFor="instructions"><b>Instructions</b>: <br></br>&emsp;{recipe.cooking_instructions}</div>
       {/* <div className="description" htmlFor="description"><b>Description</b>: {recipe.description}</div>
       <div className="instructions" htmlFor="instructions"><b>Instructions</b>: {recipe.cooking_instructions}</div>
-      <div className="description" htmlFor="description"><b>Description</b>: {recipe.description}</div>
-      <div className="instructions" htmlFor="instructions"><b>Instructions</b>: {recipe.cooking_instructions}</div> */}
-
 
     </section>
   );

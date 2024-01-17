@@ -15,18 +15,20 @@ const useRecipes = (closeModalRecipe) => {
   const newRecipe = async (data) => {
     try {
       const response = await axios.post(`${base_url}/api/recipes/`, data);
-
+      let newRecipeId = response.data.data.rows[0].id;
       if (response.data.success) {
         setError(false);
         setMessageError("");
         closeModalRecipe();
+        window.location.href = `/recipes/${newRecipeId}`;
+      } else {
+        setError(true);
+        setMessageError(response.data.message);
+
       }
-      setError(true);
-      setMessageError(response.data.message);
     } catch (error) {
       setError(true);
-      setMessageError(response.data.message);
-      console.error("Login failed", err.response.data);
+      setMessageError(error);
     }
   };
 

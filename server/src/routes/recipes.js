@@ -17,7 +17,7 @@ router.get("/favorite-recipes/:id", (req, res) => {
   const { id } = req.params;
 
   recipesQueries
-    .favoriteRecipes(id)
+  .favoriteRecipes(id)
     .then((recipes) => {
       res.status(200).json(recipes);
     })
