@@ -115,6 +115,34 @@ const findById = async (id) => {
   }
 };
 
+const findByUserId = async (id) => {
+  try {
+    const query = "SELECT recipes.*, cuisines.name As cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE user_id = $1";
+    const result = await db.query(query, [id]);
+    if (result.rowCount > 0) {
+      return { success: true, recipe: result.rows[0] };
+    } else {
+      return { success: true, recipe: [] };
+    }
+  } catch (error) {
+    return { success: false, message: error };
+  }
+};
+
+const deleteById = async (id) => {
+  try {
+    const query = "DELETE FROM recipes WHERE id = $1;";
+    const result = await db.query(query, [id]);
+    if (result.rowCount > 0) {
+      return { success: true, recipe: result.rows[0] };
+    } else {
+      return { success: true, recipe: [] };
+    }
+  } catch (error) {
+    return { success: false, message: error };
+  }
+};
+
 const favoriteRecipes = async (id) => {
   try {
     const query = "SELECT recipe_id FROM favorites WHERE user_id = $1;";
@@ -209,12 +237,14 @@ module.exports = {
   findAll,
   findTopRatedRecipes,
   findTopThreeRecipes,
-  findById,
+  findById, 
+  deleteById,
   favoriteRecipes,
   findItalianRecipes,
   findJapaneseRecipes,
   findIndianRecipes,
   findKoreanRecipes,
   findMexicanRecipes,
-  newRecipe
+  newRecipe,
+  findByUserId
 };

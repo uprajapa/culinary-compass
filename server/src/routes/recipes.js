@@ -36,7 +36,19 @@ router.post("/", (req, res) => {
     .catch((err) => {
       res.status(500).json({ error: err.message });
     });
-});
+  });
+  
+  router.get("/users/:id", (req, res) => {
+    const { id } = req.params;
+    recipesQueries
+      .findByUserId(id)
+      .then((recipe) => {
+        res.status(200).json(recipe);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  });
 
 router.get("/:id", (req, res) => {
   const { id } = req.params;
@@ -49,5 +61,31 @@ router.get("/:id", (req, res) => {
       res.status(500).json({ error: err.message });
     });
 });
+
+router.delete("/:id", (req, res) => {
+  const { id } = req.params;
+  recipesQueries
+    .deleteById(id)
+    .then((recipe) => {
+      res.status(200).json(recipe);
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
+});
+
+router.put("/:id", (req, res) => {
+  const { id } = req.params;
+  const {  } = req.body;
+  recipesQueries
+    .editById(id)
+    .then((recipe) => {
+      res.status(200).json(recipe);
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
+});
+
 
 module.exports = router;

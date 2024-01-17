@@ -8,10 +8,12 @@ body {
   margin-top: 70px;
   font-size: 25px;
   align-self: center;
+  width: 100%;
 }
 .stuff {
   display: flex;
   flex-direction: column;
+  width: 1100px;
 }
 h1{
   display: flex;
@@ -24,4 +26,28 @@ h1{
   font-weight: bold;
   font-size: 3rem;
   align-self: center;
+}
+
+.title-row {
+  font-family: 'Bad Script', cursive;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.title-data {
+  margin-right: 3rem;
+  margin-left: 3rem;
+}
+
+.content-row {
+  border: solid;
+  border-width: 1.5px;
+  border-color: black;
+  margin: 3px;
+}
+
+button {
+  width: 10rem;
+  border-width: 1.5px;
+  border-color: black;
 }
