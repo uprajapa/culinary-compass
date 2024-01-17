@@ -12,8 +12,7 @@
   box-shadow: 0 5px 4px 0 rgba(0,0,0,.2);
   font-size: 2.7rem;
   margin-bottom: 3rem !important;
-  color: #000000;
-  
+  color: #000000;  
 }
 .container {
   display: flex;
@@ -129,6 +128,7 @@
 }
 
 .profile-dropdown-content {
+  width: 15rem;
   left: -2.2rem;
   color: black;
   display: none;
@@ -149,4 +149,16 @@
 .profile-dropdown:hover .profile-dropdown-content {
   cursor: pointer;
   display: block;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
