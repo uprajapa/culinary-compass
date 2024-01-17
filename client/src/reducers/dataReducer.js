@@ -1,5 +1,6 @@
 export const UNAUTHORIZED = "UNAUTHORIZED";
 export const MODAL_LOGIN = "MODAL_LOGIN";
+export const MODAL_RECIPE = "MODAL_RECIPE";
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
 
@@ -20,6 +21,10 @@ const dataReducer = (state, action) => {
     MODAL_LOGIN: {
       ...state,
       isModalOpenLogin: !state.isModalOpenLogin,
+    },
+    MODAL_RECIPE: {
+      ...state,
+      isModalOpenRecipe: !state.isModalOpenRecipe,
     },
   };
 

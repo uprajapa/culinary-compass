@@ -15,9 +15,21 @@ router.post("/auth", (req, res) => {
 });
 
 router.post("/createUser", (req, res) => {
-  const { email, password } = req.body;
+  const { name, email, password } = req.body;
   userQueries
-    .createUser(email, password)
+    .createUser(name, email, password)
+    .then((user) => {
+      res.status(200).json(user);
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
+});
+
+router.get("/:email", (req, res) => {
+  const { email } = req.params;
+  userQueries
+    .getUserByEmail(email)
     .then((user) => {
       res.status(200).json(user);
     })
