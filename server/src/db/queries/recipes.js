@@ -55,7 +55,21 @@ const findById = async (id) => {
     return { success: false, message: error };
   }
 };
-
+const deleteById = async (id) => {
+  try {
+    const query = "DELETE FROM recipes WHERE id = $1;";
+    const result = await db.query(query, [id]);
+    if (result.rowCount > 0) {
+      return { success: true, recipe: result.rows[0] };
+    } else {
+      return { success: true, recipe: [] };
+    }
+  } catch (error) {
+    return { success: false, message: error };
+  }
+};
+// DELETE FROM recipes
+//   WHERE producer_id IN (SELECT id FROM producers WHERE name = 'foo');
 const findItalianRecipes = async () => {
   try {
     const query = "SELECT *, recipes.id, cuisines.name AS cuisine_name FROM recipes JOIN cuisines ON cuisines.id = recipes.cuisine_id WHERE cuisines.name = 'Italian';";
@@ -127,4 +141,4 @@ const findMexicanRecipes = async () => {
   }
 };
 
-module.exports = { findAll, findTopRatedRecipes, findTopThreeRecipes, findById, findItalianRecipes, findJapaneseRecipes, findIndianRecipes, findKoreanRecipes, findMexicanRecipes };
+module.exports = { findAll, findTopRatedRecipes, findTopThreeRecipes, findById, deleteById, findItalianRecipes, findJapaneseRecipes, findIndianRecipes, findKoreanRecipes, findMexicanRecipes };
