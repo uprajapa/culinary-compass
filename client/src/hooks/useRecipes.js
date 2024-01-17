@@ -23,7 +23,7 @@ const useRecipes = () => {
     }
   };
 
-  return { recipes };
+  return { recipes, setRecipes  };
 };
 
 export default useRecipes;
