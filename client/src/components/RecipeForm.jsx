@@ -31,9 +31,9 @@ const RecipeForm = ({ closeModalRecipe }) => {
 
   return (
     <div>
-      <p className="mt-4 mb-4">
+      <div className="mt-4 mb-4">
         {error && <ErrorMessage messageError={messageError} />}
-      </p>
+      </div>
 
       <p className="text-center text-4xl">New Recipe</p>
       <form onSubmit={handleSubmit}>
