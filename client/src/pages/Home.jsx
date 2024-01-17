@@ -4,7 +4,7 @@ import RecipeList from "../components/RecipeList";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
 
-function Home({ favorite, handleFavorite, topRecipes, topThreeRecipes, favoriteRecipesIds }) {
+function Home({ handleFavorite, topRecipes, topThreeRecipes, favoriteRecipesIds }) {
   return (
     <div className="home">
       {topThreeRecipes.length && (
@@ -13,7 +13,6 @@ function Home({ favorite, handleFavorite, topRecipes, topThreeRecipes, favoriteR
       <RecipeList
         favoriteRecipesIds={favoriteRecipesIds}
         recipes={topRecipes}
-        favorite={favorite}
         handleFavorite={handleFavorite}
       />
     </div>

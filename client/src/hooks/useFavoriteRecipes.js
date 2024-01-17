@@ -18,10 +18,8 @@ const useFavoriteRecipes = (recipes) => {
       if (response.status === 200) {
         const data = response.data.favoriteRecipes;
         data.map((recipe) => {
-
           const newRecipeData = recipes.find((item) => item.id == recipe.recipe_id);
           favoriteRecipes.push(newRecipeData);
-
         })
       }
     } catch (err) {

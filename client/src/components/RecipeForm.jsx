@@ -2,6 +2,8 @@ import { useState } from "react";
 import useRecipes from "../hooks/useRecipes";
 import SelectCusine from "./SelectCusine";
 import ErrorMessage from "../components/ErrorMessage";
+import "../../public/css/modalForm.css";
+
 const RecipeForm = ({ closeModalRecipe }) => {
   const { newRecipe, error, messageError } = useRecipes(closeModalRecipe);
   const [formData, setFormData] = useState({
@@ -36,7 +38,7 @@ const RecipeForm = ({ closeModalRecipe }) => {
       </p>
 
       <p className="text-center text-4xl">New Recipe</p>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="modal-form">
         <div className="flex flex-col mt-4">
           <SelectCusine
             nameField={formData.cuisine_id}
@@ -48,7 +50,7 @@ const RecipeForm = ({ closeModalRecipe }) => {
               name="recipe_name"
               value={formData.recipe_name}
               onChange={handleChange}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Recipe Name"
               required
             />
@@ -59,7 +61,7 @@ const RecipeForm = ({ closeModalRecipe }) => {
               onChange={handleChange}
               id="chef_name"
               disabled
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Chef Name"
               required
             />
@@ -71,7 +73,7 @@ const RecipeForm = ({ closeModalRecipe }) => {
               onChange={handleChange}
               name="prep_time"
               id="prep_time"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Prep Time"
               required
             />
@@ -81,7 +83,7 @@ const RecipeForm = ({ closeModalRecipe }) => {
               value={formData.cook_time}
               onChange={handleChange}
               id="cook_time"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Cooking Time"
               required
             />
@@ -93,7 +95,7 @@ const RecipeForm = ({ closeModalRecipe }) => {
               value={formData.budget}
               onChange={handleChange}
               id="budget"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Budget"
               required
             />
@@ -103,7 +105,7 @@ const RecipeForm = ({ closeModalRecipe }) => {
               value={formData.servings}
               onChange={handleChange}
               id="servings"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="How many people servings?"
               required
             />
@@ -115,7 +117,7 @@ const RecipeForm = ({ closeModalRecipe }) => {
               value={formData.video_link}
               onChange={handleChange}
               id="video_link"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="https://youtube.com"
               required
             />
@@ -125,7 +127,7 @@ const RecipeForm = ({ closeModalRecipe }) => {
               value={formData.photo_link}
               onChange={handleChange}
               id="photo_link"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-700 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="https://photo.com"
               required
             />

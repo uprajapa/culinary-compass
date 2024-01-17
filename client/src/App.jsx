@@ -48,7 +48,7 @@ const customStylesRecipe = {
     zIndex: 1000,
   },
   content: {
-    width: "600px",
+    width: "100rem",
     top: "55%",
     left: "50%",
     right: "auto",
@@ -73,8 +73,8 @@ function App() {
   const { topThreeRecipes } = useTopThreeRecipes();
 
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
-  // let favoriteRecipesIds = [];
   const [favoriteRecipesIds, setFavoriteRecipesIds] = useState([]);
+
   useEffect(() => {
     if (recipes.length > 0) {
       useFavoriteRecipes(recipes)
@@ -85,8 +85,6 @@ function App() {
         .catch((err) => console.error(err));
     }
   }, [recipes]);
-
-  const [favorite, setFavorite] = useState(false);
 
   const handleFavorite = async (recipeId, isFavorite) => {
     if (isFavorite) {
@@ -134,7 +132,6 @@ function App() {
               <Home
                 topRecipes={topRecipes}
                 topThreeRecipes={topThreeRecipes}
-                favorite={favorite}
                 handleFavorite={handleFavorite}
                 favoriteRecipesIds={favoriteRecipesIds}
               />
@@ -145,7 +142,6 @@ function App() {
             element={
               <Recipes
                 recipes={recipes}
-                favorite={favorite}
                 handleFavorite={handleFavorite}
                 favoriteRecipesIds={favoriteRecipesIds}
               />
@@ -157,7 +153,6 @@ function App() {
               element={
                 <FavoriteRecipes
                   favoriteRecipes={favoriteRecipes}
-                  favorite={favorite}
                   favoriteRecipesIds={favoriteRecipesIds}
                   handleFavorite={handleFavorite}
                 />
@@ -169,7 +164,6 @@ function App() {
             path="/cuisines/:id"
             element={
               <CuisineCategory
-                favorite={favorite}
                 favoriteRecipesIds={favoriteRecipesIds}
                 handleFavorite={handleFavorite}
               />
