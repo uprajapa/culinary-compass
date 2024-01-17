@@ -128,6 +128,7 @@
 }
 
 .profile-dropdown-content {
+  width: 15rem;
   left: -2.2rem;
   color: black;
   display: none;
@@ -148,4 +149,16 @@
 .profile-dropdown:hover .profile-dropdown-content {
   cursor: pointer;
   display: block;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }

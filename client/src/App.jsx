@@ -2,6 +2,7 @@ import { React, useEffect, useMemo, useReducer, useState, useSyncExternalStore }
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Modal from "react-modal";
 import { MdClose } from "react-icons/md";
+import { MDBFooter } from 'mdb-react-ui-kit';
 import "./App.css";
 
 import favoriteIds from "./helpers/favoriteIds";
@@ -195,7 +196,17 @@ function App() {
           />
           <RecipeForm closeModalRecipe={closeModalRecipe} />
         </Modal>
+        <MDBFooter bgColor='light' className='text-center text-lg-left'>
+          <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+            &copy; {new Date().getFullYear()} Copyright:{' '}
+            <a className='text-dark' href='https://mdbootstrap.com/'>
+              MDBootstrap.com
+            </a>
+          </div>
+        </MDBFooter>
       </Router>
+
+
     </>
   );
 }
