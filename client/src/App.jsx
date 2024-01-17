@@ -2,7 +2,6 @@ import { React, useEffect, useMemo, useReducer, useState, useSyncExternalStore }
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Modal from "react-modal";
 import { MdClose } from "react-icons/md";
-//import { MDBFooter } from 'mdb-react-ui-kit';
 import "./App.css";
 
 import favoriteIds from "./helpers/favoriteIds";
@@ -49,7 +48,7 @@ const customStylesRecipe = {
     zIndex: 1000,
   },
   content: {
-    width: "600px",
+    width: "100rem",
     top: "55%",
     left: "50%",
     right: "auto",
@@ -74,8 +73,8 @@ function App() {
   const { topThreeRecipes } = useTopThreeRecipes();
 
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
-  // let favoriteRecipesIds = [];
   const [favoriteRecipesIds, setFavoriteRecipesIds] = useState([]);
+
   useEffect(() => {
     if (recipes.length > 0) {
       useFavoriteRecipes(recipes)
@@ -86,8 +85,6 @@ function App() {
         .catch((err) => console.error(err));
     }
   }, [recipes]);
-
-  const [favorite, setFavorite] = useState(false);
 
   const handleFavorite = async (recipeId, isFavorite) => {
     if (isFavorite) {
@@ -135,7 +132,6 @@ function App() {
               <Home
                 topRecipes={topRecipes}
                 topThreeRecipes={topThreeRecipes}
-                favorite={favorite}
                 handleFavorite={handleFavorite}
                 favoriteRecipesIds={favoriteRecipesIds}
               />
@@ -146,7 +142,6 @@ function App() {
             element={
               <Recipes
                 recipes={recipes}
-                favorite={favorite}
                 handleFavorite={handleFavorite}
                 favoriteRecipesIds={favoriteRecipesIds}
               />
@@ -158,7 +153,6 @@ function App() {
               element={
                 <FavoriteRecipes
                   favoriteRecipes={favoriteRecipes}
-                  favorite={favorite}
                   favoriteRecipesIds={favoriteRecipesIds}
                   handleFavorite={handleFavorite}
                 />
@@ -170,13 +164,12 @@ function App() {
             path="/cuisines/:id"
             element={
               <CuisineCategory
-                favorite={favorite}
                 favoriteRecipesIds={favoriteRecipesIds}
                 handleFavorite={handleFavorite}
               />
             }
           />
-          <Route path="/my-recipes" element={<MyRecipes recipes={recipes}/>} />
+          <Route path="/my-recipes" element={<MyRecipes />} />
         </Routes>
         <Modal
           isOpen={state.isModalOpenLogin}
@@ -202,15 +195,32 @@ function App() {
           />
           <RecipeForm closeModalRecipe={closeModalRecipe} />
         </Modal>
-        {/* <MDBFooter bgColor='light' className='text-center text-lg-left'>
-          <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-            &copy; {new Date().getFullYear()} Copyright:{' '}
-            <a className='text-dark' href='https://mdbootstrap.com/'>
-              MDBootstrap.com
-            </a>
+
+
+        <footer className="bg-white rounded-lg shadow dark:bg-gray-800">
+          <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-center">
+            <span className="text-lg lg:text-center">© 2024 <a href="https://flowbite.com/" className="hover:underline">Culinary Compass</a>. All Rights Reserved.
+            </span>
+            {/* <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+              <li>
+                <a href="#" className="hover:underline me-4 md:me-6">About</a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline me-4 md:me-6">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline me-4 md:me-6">Licensing</a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">Contact</a>
+              </li>
+            </ul> */}
           </div>
-        </MDBFooter> */}
+        </footer>
+
       </Router>
+
+
     </>
   );
 }

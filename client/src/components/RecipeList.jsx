@@ -19,9 +19,8 @@ const RecipeList = (props) => {
         cuisine={recipe.cuisine_name}
         description={recipe.description}
         photo_link={recipe.photo_link}
-        favorite={favorite}
-        handleFavorite={handleFavorite}
         favoriteRecipesIds={favoriteRecipesIds}
+        handleFavorite={handleFavorite}
       />
     </li>
   );

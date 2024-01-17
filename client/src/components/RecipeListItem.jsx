@@ -14,12 +14,10 @@ const RecipeListItem = (props) => {
     description,
     photo_link,
     id,
-    favorite,
     handleFavorite,
     favoriteRecipesIds
   } = props;
 
-  // let isFavorite = false;
   const [isFavorite, setIsFavorite] = useState(false)
   useEffect(() => {
     setIsFavorite(favoriteRecipesIds?.includes(id))
