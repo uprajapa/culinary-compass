@@ -86,4 +86,6 @@ const getUserByEmail = async (email) => {
     return { success: false, message: error };
   }
 };
+
+
 module.exports = { auth, createUser, getUserByEmail };

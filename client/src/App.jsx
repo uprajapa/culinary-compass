@@ -176,7 +176,7 @@ function App() {
               />
             }
           />
-          <Route path="/my-recipes" element={<MyRecipes />} />
+          <Route path="/my-recipes" element={<MyRecipes recipes={recipes}/>} />
         </Routes>
         <Modal
           isOpen={state.isModalOpenLogin}

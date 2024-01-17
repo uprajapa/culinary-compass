@@ -36,7 +36,19 @@ router.post("/", (req, res) => {
     .catch((err) => {
       res.status(500).json({ error: err.message });
     });
-});
+  });
+  
+  router.get("/users/:id", (req, res) => {
+    const { id } = req.params;
+    recipesQueries
+      .findByUserId(id)
+      .then((recipe) => {
+        res.status(200).json(recipe);
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  });
 
 router.get("/:id", (req, res) => {
   const { id } = req.params;
@@ -74,5 +86,6 @@ router.put("/:id", (req, res) => {
       res.status(500).json({ error: err.message });
     });
 });
+
 
 module.exports = router;
