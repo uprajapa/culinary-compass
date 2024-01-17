@@ -36,4 +36,18 @@ router.delete("/:id", (req, res) => {
       res.status(500).json({ error: err.message });
     });
 });
+
+router.put("/:id", (req, res) => {
+  const { id } = req.params;
+  const {  } = req.body;
+  recipesQueries
+    .editById(id)
+    .then((recipe) => {
+      res.status(200).json(recipe);
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err.message });
+    });
+});
+
 module.exports = router;
