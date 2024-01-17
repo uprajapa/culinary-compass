@@ -99,7 +99,6 @@ function App() {
       .then((favs) => {
         setFavoriteRecipes(favs);
         setFavoriteRecipesIds(favoriteIds(favs));
-        debugger
       })
       .catch((err) => console.error(err));
   };
@@ -176,7 +175,7 @@ function App() {
               />
             }
           />
-          <Route path="/my-recipes" element={<MyRecipes recipes={recipes}/>} />
+          <Route path="/my-recipes" element={<MyRecipes recipes={recipes} />} />
         </Routes>
         <Modal
           isOpen={state.isModalOpenLogin}
