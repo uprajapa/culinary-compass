@@ -2,7 +2,7 @@
 A place for users to share recipes with each other.
 
 ## Screenshots
-!["Main Page"]()
+!["Main Page"](https://github.com/uprajapa/culinary-compass/blob/main/client/docs/Culinary%20Compass%20Main%20Page.png?raw=true)
 
 
 ![“Create recipe"]()
